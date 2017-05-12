@@ -1,7 +1,7 @@
 global titleimage as integer
 
 function initStartScreen()
-	titleimage = CreateSprite(LoadImage("tower_50.png")) //Loads an image and creates a sprite
+	titleimage = CreateSprite(LoadImage("tile134.png",1)) //Loads an image and creates a sprite
 	SetSpriteSize(titleimage, displayWidth*0.5, displayHeight*0.5) // Sets the title image to half the screen width and height
 	SetSpritePositionByOffset(titleimage, displayWidth*0.5, displayHeight*0.3) // Positions the title image at the top and in the centre of the screen
 	
