@@ -6,10 +6,9 @@
 #include "startscreen.agc"
 
 Initialise() 
+initStartScreen()
 
 do
-    ShowStartScreen()
-
-    Print( ScreenFPS() )
+	salir()
     Sync()
 loop
