@@ -1,8 +1,9 @@
 function initStartScreen()
 	// Creación de botones virtuales
-	AddVirtualButton(1, displayWidth*0.5, displayHeight*0.6+110, 100)
+	AddVirtualButton(1, displayWidth*0.5+6, displayHeight*0.6+20, 180)
 	SetVirtualButtonText(1, "Jugar")
-	AddVirtualButton(2, displayWidth*0.5, displayHeight*0.6+220, 100)
+	AddVirtualButton(2, displayWidth*0.5+6, displayHeight*0.6+206, 180)
+	SetVirtualButtonAlpha(2, 0)
 	SetVirtualButtonText(2, "Salir")
 endfunction
 
