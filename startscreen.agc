@@ -1,3 +1,4 @@
+#include "enemigo.agc"
 function initStartScreen()
 	// Creación de botones virtuales
 	AddVirtualButton(1, displayWidth*0.5+6, displayHeight*0.6+20, 180)
@@ -16,6 +17,7 @@ function iniciar()
 		if GetVirtualButtonPressed(1)
 		LoadImage(2, "CaminoFinal.png")
 		CreateSprite(2,2)
+		crearEnemigo()
 		ResetTimer() // resetea el timer
 	// Carga el timer y borra los botones
 		do
@@ -25,9 +27,11 @@ function iniciar()
 		SetVirtualButtonVisible(1, 0)
 		SetVirtualButtonActive(2, 0)
 		SetVirtualButtonVisible(2, 0)
+		enemigo()
 		sync()
 		loop
 		endif
+
 endfunction
 
 
@@ -42,5 +46,6 @@ function reloj(sec as float) // Reloj
         
         sec = trunc(sec)
         Print(right("00"+str(min,0),2)+":"+right("00"+str(sec,0),2))
+
 endfunction
-	
+
