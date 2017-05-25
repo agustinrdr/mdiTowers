@@ -9,6 +9,7 @@ Initialise()
 initStartScreen()
 
 do
+	iniciar()
 	salir()
     Sync()
 loop

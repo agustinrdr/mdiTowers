@@ -45,6 +45,9 @@ FILE_1=startscreen.agc;-1
 FILE_2=initialise.agc;-1
 
 [files]
+FILE_NAME_0=0;main.agc;167;0
+FILE_NAME_1=1;startscreen.agc;1130;1
+FILE_NAME_2=0;initialise.agc;632;2
 
 [project]
 description=
