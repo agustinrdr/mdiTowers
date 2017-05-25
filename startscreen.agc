@@ -14,7 +14,7 @@ endfunction
 function iniciar()
 	// Espera a que el boton Jugar se presione
 		if GetVirtualButtonPressed(1)
-		LoadImage(2, "FondoJuego.png")
+		LoadImage(2, "CaminoFinal.png")
 		CreateSprite(2,2)
 		ResetTimer() // resetea el timer
 	// Carga el timer y borra los botones
@@ -37,7 +37,7 @@ function reloj(sec as float) // Reloj
         sec = sec - min * 60.0
         
         local ms as Float
-        ms = sec - trunc(sec)
+        ms = sec - trunc(sec) 
         ms = ms * 100.0
         
         sec = trunc(sec)
