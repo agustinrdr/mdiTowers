@@ -16,8 +16,10 @@ function iniciar()
 	// Espera a que el boton Jugar se presione
 		if GetVirtualButtonPressed(1)
 		LoadImage(2, "CaminoFinal.png")
-		CreateSprite(2,2)
+		CreateSprite(2,2)		
 		crearEnemigo()
+			
+	
 		ResetTimer() // resetea el timer
 	// Carga el timer y borra los botones
 		do
@@ -27,7 +29,14 @@ function iniciar()
 		SetVirtualButtonVisible(1, 0)
 		SetVirtualButtonActive(2, 0)
 		SetVirtualButtonVisible(2, 0)
-		enemigo()
+		if variable = 0
+		Menemigo()
+		endif
+		if variable = 1
+		Menemigo2()
+		endif
+		Print("X: "+str(RobotX#,1))
+		Print("Y: "+str(RobotY#,1))
 		sync()
 		loop
 		endif
