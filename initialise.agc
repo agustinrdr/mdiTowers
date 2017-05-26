@@ -20,6 +20,7 @@ function Initialise()
 	UseNewDefaultFonts( 1 ) // Fuentes
 	LoadImage(1,"MenuTerminado02.png")
 	CreateSprite(1,1)
+	
 
 endfunction
 

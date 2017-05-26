@@ -1,4 +1,5 @@
 #include "enemigo.agc"
+#include "BotonTorre.agc"
 function initStartScreen()
 	// Creación de botones virtuales
 	AddVirtualButton(1, displayWidth*0.5+6, displayHeight*0.6+20, 180)
@@ -18,10 +19,10 @@ function iniciar()
 		LoadImage(2, "CaminoFinal.png")
 		CreateSprite(2,2)		
 		crearEnemigo()
-			
-	
+		CrearBotonTorre1 ()	
 		ResetTimer() // resetea el timer
 	// Carga el timer y borra los botones
+	
 		do
 		a#=timer()
 		reloj(a#)
@@ -35,12 +36,21 @@ function iniciar()
 		if variable = 1
 		Menemigo2()
 		endif
+		
+		if GetSeconds() = 5
+			puntuacion = 10
+		endif
+		iniciarbotones()
+		sync ()
 		Print("X: "+str(RobotX#,1))
 		Print("Y: "+str(RobotY#,1))
-		sync()
+		Print ("Puntos: "+ str(puntuacion))
+		
+		
 		loop
 		endif
-
+		
+		
 endfunction
 
 

@@ -25,6 +25,7 @@ function Menemigo()
 	if(RobotX# = 504 and RobotY# = 580)
 		variable = 1
 	endif
+	
 endfunction
 
 function Menemigo2 ()

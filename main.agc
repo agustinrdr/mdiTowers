@@ -4,8 +4,10 @@
 
 #include "initialise.agc"
 #include "startscreen.agc"
+global puntuacion =5
 
 Initialise() 
+
 initStartScreen()
 
 do
@@ -13,3 +15,4 @@ do
 	salir()
     Sync()
 loop
+
