@@ -7,7 +7,10 @@
 
 global puntuacion =5
 global vidas =1
-
+global mousex as float
+global mousey as float
+global torres=10
+global stack = 0
 Initialise() 
 
 initStartScreen()

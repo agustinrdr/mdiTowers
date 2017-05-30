@@ -45,16 +45,15 @@ FILE_1=startscreen.agc;-1
 FILE_2=initialise.agc;-1
 FILE_3=enemigo.agc;-1
 FILE_4=BotonTorre.agc;-1
-FILE_5=highscore.agc;-1
-FILE_6=puntajes.agc;-1
+FILE_5=TorreA.agc;-1
 
 [files]
-FILE_NAME_0=0;main.agc;158;0
-FILE_NAME_1=1;startscreen.agc;1914;1
-FILE_NAME_2=0;initialise.agc;644;4
+FILE_NAME_0=0;main.agc;201;0
+FILE_NAME_1=1;startscreen.agc;572;1
+FILE_NAME_2=0;initialise.agc;644;3
 FILE_NAME_3=0;enemigo.agc;1222;2
-FILE_NAME_4=0;BotonTorre.agc;0;5
-FILE_NAME_5=0;puntajes.agc;50;3
+FILE_NAME_4=0;BotonTorre.agc;0;4
+FILE_NAME_5=0;TorreA.agc;205;5
 
 [project]
 description=

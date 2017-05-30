@@ -1,6 +1,6 @@
 #include "enemigo.agc"
 #include "BotonTorre.agc"
-
+#include "TorreA.agc"
 function initStartScreen()
 	// Creación de botones virtuales
 	AddVirtualButton(1, displayWidth*0.5+6, displayHeight*0.6+20, 180)
@@ -20,13 +20,14 @@ function iniciar()
 	if GetVirtualButtonPressed(1)
 		
 		LoadImage(2, "CaminoFinal.png")
+		LoadImage (7, "torre04.png")
 		CreateSprite(2,2)		
 		crearEnemigo()
 		CrearBotonTorre1 ()	
 		ResetTimer() // resetea el timer
 		
 	// Carga el timer y borra los botones anteriores
-		while (vidas>0)
+		while (vidas>0)	
 		a#=timer()
 		reloj(a#)
 		SetVirtualButtonActive(1, 0)
@@ -38,7 +39,17 @@ function iniciar()
 			iniciarbotones()		//botonera para colocar torres
 			indicadores()
 			movEnemigos()
-			LlegaALaBase ()			
+			LlegaALaBase ()	
+			
+		if GetVirtualButtonPressed (3) // iniciar torre si toca el boton
+			torrea() 
+		endif
+		if torres >10
+		fijar ()
+		endif
+		if GetSeconds() = 5
+			puntuacion = 10
+		endif
 		sync()
 		endwhile	
 		
