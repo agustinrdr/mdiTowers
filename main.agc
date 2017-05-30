@@ -4,7 +4,9 @@
 
 #include "initialise.agc"
 #include "startscreen.agc"
+
 global puntuacion =5
+global vidas =1
 
 Initialise() 
 
@@ -15,4 +17,5 @@ do
 	salir()
     Sync()
 loop
+
 
