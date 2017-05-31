@@ -11,6 +11,7 @@ global mousex as float
 global mousey as float
 global torres=10
 global stack = 0
+global stack2= 0
 Initialise() 
 
 initStartScreen()
