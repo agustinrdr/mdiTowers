@@ -66,4 +66,14 @@ function LlegaALaBase ()
 endfunction
 	
 
+function movEnemigos()
+	// Mueve el enemigo una vez iniciado con crearEnemigo()
+		if variable = 0
+			Menemigo()
+		endif
+		if variable = 1
+			Menemigo2()
+		endif
+		
+endfunction
 	

@@ -1,27 +1,26 @@
 #include "startscreen.agc"
-global k=0
+global k=0 //maximo 
 global stack2= 0
-function torreb () 
-	if  puntuacion >= 10
-	k=k+1
-	torresB[k]= CreateSprite (8)
-	
-	SetSpriteSize(torresB[k], 60,60)	
-	SetSpritePosition (torresB[k], mousex, mousey)
-	SetSpriteVisible  (torresB[k],0)
-	puntuacion =puntuacion-10
-	stack2 = stack2 + 1
-	endif
 
+function torreb () 		
+if  monedas >= 10
+	SetSpriteVisible  (torresB[k], 1)
+	SetSpriteActive (torresB[k], 1)
+	SetSpritePosition (torresB[k], mouseX, mouseY)	//arreglar para que siga el puntero con sync (?)	
+	stack2 = stack2 + 1	
+	monedas=monedas-10 	
+endif
 endfunction
 function fijar2 ()
-	if ( GetPointerPressed ( ) = 1 )
-		if stack2 > 0
+	if stack2 > 0
+		if ( GetPointerPressed ( ) = 1 )		
 			Tx# = GetPointerX ( )
 			Ty# = GetPointerY ( )
-			SetSpritePosition (torresB[k], Tx#-30, Ty#-30 )
+			SetSpritePosition (torresB[k], Tx#-30, Ty#-30)
 			SetSpriteVisible (torresB[k],1)
+			SetSpriteActive (torresB[k], 1)
 			stack2=stack2-1
+			k=k+1
 		endif
 	endif
 endfunction	

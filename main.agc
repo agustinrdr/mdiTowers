@@ -5,10 +5,11 @@
 #include "initialise.agc"
 #include "startscreen.agc"
 
-global puntuacion =5
-global vidas =1
-global mousex as float
-global mousey as float
+global puntuacion = 0 
+global monedas = 5
+global vidas = 1
+global mouseX as float
+global mouseY as float
 global torresA as integer [5]
 global torresB as integer [5]
 

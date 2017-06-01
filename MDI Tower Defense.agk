@@ -49,6 +49,12 @@ FILE_5=TorreA.agc;-1
 FILE_6=TorreB.agc;-1
 
 [files]
+FILE_NAME_0=0;main.agc;193;1
+FILE_NAME_1=0;startscreen.agc;951;4
+FILE_NAME_2=0;enemigo.agc;1642;0
+FILE_NAME_3=0;BotonTorre.agc;0;5
+FILE_NAME_4=1;TorreA.agc;619;2
+FILE_NAME_5=0;TorreB.agc;326;3
 
 [project]
 description=

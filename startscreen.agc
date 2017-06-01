@@ -2,6 +2,7 @@
 #include "BotonTorre.agc"
 #include "TorreA.agc"
 #include "TorreB.agc"
+
 function initStartScreen()
 	// Creación de botones virtuales
 	AddVirtualButton(1, displayWidth*0.5+6, displayHeight*0.6+20, 180)
@@ -20,16 +21,32 @@ function iniciar()
 	// Espera a que el boton Jugar se presione
 	if GetVirtualButtonPressed(1)
 		
-		LoadImage(2, "CaminoFinal.png")
-		LoadImage (7, "towerDefense_tile249.png")
-		LoadImage (8, "towerDefense_tile250.png")
-		CreateSprite(2,2)		
+		LoadImage(2, "CaminoFinal.png")	
+		CreateSprite(2,2)
 		crearEnemigo()
-		CrearBotonTorre1 ()	
+		CrearBotonTorre ()	
 		ResetTimer() // resetea el timer
 		
+		//Aray de torres tipo A
+		imagenA = LoadImage ("towerDefense_tile249.png")
+		for j = 0 to 4			
+			torresA[j]=CreateSprite (imagenA)
+			SetSpriteSize(torresA[j], 60,60)
+			SetSpriteVisible  (torresA[j],0)
+			SetSpriteActive (torresA[j], 0)
+		next j
+		
+		//Aray de torres tipo B
+		imagenB = LoadImage ("towerDefense_tile250.png")
+		for j = 0 to 4			
+			torresB[j]=CreateSprite (imagenB)
+			SetSpriteSize(torresB[j], 60,60)
+			SetSpriteVisible  (torresB[j],0)
+			SetSpriteActive (torresB[j], 0)
+		next j
+			
 	// Carga el timer y borra los botones anteriores
-		while (vidas>0)	
+	while (vidas>0)	
 		a#=timer()
 		reloj(a#)
 		SetVirtualButtonActive(1, 0)
@@ -43,23 +60,33 @@ function iniciar()
 			movEnemigos()
 			LlegaALaBase ()	
 			
-		if GetVirtualButtonPressed (3) // iniciar torre si toca el boton
-			torrea() 
+		if GetVirtualButtonPressed (3) // iniciar torre A si toca el boton
+			torrea() 				
 		endif
-		if GetVirtualButtonPressed (5) // iniciar torre A si toca el boton
-			torreb() 
+		
+		if GetVirtualButtonPressed (5) // iniciar torre B si toca el boton
+			torreb()			
 		endif
+		
 		if stack >= 1
-		fijar ()
+			fijar ()
 		endif
-		if stack2>=1
-		fijar2 ()
+			
+		if stack2 >= 1
+			fijar2 ()
 		endif
+		
+		//TEST
 		if GetSeconds() = 5
-			puntuacion = 10
+			monedas = 10
 		endif
+		
+		if GetSeconds() = 15
+			monedas = monedas+10
+		endif
+		
 		sync()
-		endwhile	
+	endwhile	
 		
 		if (vidas = 0)
 			ShowGameOverScreen()
@@ -68,22 +95,13 @@ function iniciar()
 	endif
 endfunction
 
-function movEnemigos()
-	// Mueve el enemigo una iniciado con crearEnemigo()
-		if variable = 0
-			Menemigo()
-		endif
-		if variable = 1
-			Menemigo2()
-		endif
-		
-endfunction
 			
 function indicadores()			
 	// Muestra indicadores varios
 		Print("X: "+str(RobotX#,1))
 		Print("Y: "+str(RobotY#,1))
 		Print ("Puntos: "+ str(puntuacion))
+		Print ("Monedas: "+ str(monedas))
 		Print ("Vidas: "+ str(vidas))
 endfunction
 
