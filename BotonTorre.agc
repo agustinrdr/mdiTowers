@@ -39,4 +39,18 @@ if puntuacion < 10
 	SetVirtualButtonAlpha (5, 50)
 	SetVirtualButtonAlpha (6, 50)
 endif
+if i>3
+	SetVirtualButtonActive (3,0)
+	SetVirtualButtonActive (4,0)
+	SetVirtualButtonAlpha (3, 50)
+	SetVirtualButtonAlpha (4, 50)
+endif
+if k>2
+	SetVirtualButtonActive (5,0)
+	SetVirtualButtonActive (6,0)
+	SetVirtualButtonAlpha (5, 50)
+	SetVirtualButtonAlpha (6, 50)
+endif
+	
+	
 endfunction

@@ -49,8 +49,10 @@ function iniciar()
 		if GetVirtualButtonPressed (5) // iniciar torre A si toca el boton
 			torreb() 
 		endif
-		if torres >10 // torres es un entero de valor 10, esto es para asignarle un ID a las torres, partiendo de ID 10, la primer torre creada va a ser ID 11
+		if stack >= 1
 		fijar ()
+		endif
+		if stack2>=1
 		fijar2 ()
 		endif
 		if GetSeconds() = 5
