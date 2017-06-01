@@ -1,5 +1,6 @@
 #include "startscreen.agc"
-
+global i=0
+global stack = 0
 function torreA () 
 	if  puntuacion >= 5
 	i=i+1

@@ -95,7 +95,9 @@ function ShowGameOverScreen()
 		SetVirtualButtonVisible(6,0) //desaparecer el botón de la torreB
 		LoadImage(6,"GAMEOVER.png")
 		CreateSprite(6,6)
-		
+		CreateText(2,"Presione ESC para salir")
+		SetTextSize(2,40)
+		SetTextPosition(2,520,510)
 endfunction
 
 function reloj(sec as float) 

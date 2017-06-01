@@ -1,4 +1,6 @@
 #include "startscreen.agc"
+global k=0
+global stack2= 0
 function torreb () 
 	if  puntuacion >= 10
 	k=k+1
