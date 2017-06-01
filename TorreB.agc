@@ -4,9 +4,12 @@ global stack2= 0
 
 function torreb () 		
 if  monedas >= 10
-	SetSpriteVisible  (torresB[k], 1)
-	SetSpriteActive (torresB[k], 1)
-	SetSpritePosition (torresB[k], mouseX, mouseY)	//arreglar para que siga el puntero con sync (?)	
+	k=k+1
+	torresB [k] = CreateSprite (8)
+	SetSpriteVisible  (torresB[k], 0)
+	SetSpriteActive (torresB[k], 0)
+	SetSpritePosition (torresB[k], mouseX, mouseY)	
+	SetSpriteSize (torresB [k], 60, 60)
 	stack2 = stack2 + 1	
 	monedas=monedas-10 	
 endif
@@ -20,7 +23,7 @@ function fijar2 ()
 			SetSpriteVisible (torresB[k],1)
 			SetSpriteActive (torresB[k], 1)
 			stack2=stack2-1
-			k=k+1
+			
 		endif
 	endif
 endfunction	

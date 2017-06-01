@@ -7,7 +7,6 @@
 	global baseY# = 200
 
 function crearEnemigo()
-	LoadImage(3, "towerDefense_tile248.png")
 	CreateSprite(3,3)
 	SetSpriteAngle(3,-90)
 	SetSpritePosition(3, RobotX#, RobotY#)

@@ -22,28 +22,15 @@ function iniciar()
 	if GetVirtualButtonPressed(1)
 		
 		LoadImage(2, "CaminoFinal.png")	
+		LoadImage (7, "towerDefense_tile249.png")
+		LoadImage (8, "towerDefense_tile250.png")
+		LoadImage(3, "towerDefense_tile248.png")
 		CreateSprite(2,2)
 		crearEnemigo()
 		CrearBotonTorre ()	
 		ResetTimer() // resetea el timer
 		
 		//Aray de torres tipo A
-		imagenA = LoadImage ("towerDefense_tile249.png")
-		for j = 0 to 4			
-			torresA[j]=CreateSprite (imagenA)
-			SetSpriteSize(torresA[j], 60,60)
-			SetSpriteVisible  (torresA[j],0)
-			SetSpriteActive (torresA[j], 0)
-		next j
-		
-		//Aray de torres tipo B
-		imagenB = LoadImage ("towerDefense_tile250.png")
-		for j = 0 to 4			
-			torresB[j]=CreateSprite (imagenB)
-			SetSpriteSize(torresB[j], 60,60)
-			SetSpriteVisible  (torresB[j],0)
-			SetSpriteActive (torresB[j], 0)
-		next j
 			
 	// Carga el timer y borra los botones anteriores
 	while (vidas>0)	
