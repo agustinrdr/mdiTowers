@@ -2,15 +2,15 @@ global displayWidth as integer
 global displayHeight as integer
 
 function Initialise()	
-	displayWidth = 1366
-	displayHeight = 768
+	displayWidth = 1380
+	displayHeight = 778
 	
 	// Mostrar errores
 	SetErrorMode(2)
 
 	// Propiedades de la ventana
 	SetWindowTitle( "Xtreme Tower Defense" )
-	SetWindowSize( 1366, 768, 0 )
+	SetWindowSize( 1370, 768, 0 )
 	SetWindowAllowResize( 1 ) // Permitir al usuario cambiar el tamaño de la ventana
 
 	// Propiedades gráficas

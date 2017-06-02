@@ -16,7 +16,10 @@ endif
 endfunction
 function fijar2 ()
 	if stack2 > 0
-		if ( GetPointerPressed ( ) = 1 )		
+		if ( GetPointerPressed ( ) = 0 )
+			SetTextColorAlpha (3, 255)
+		else
+			SetTextColorAlpha (3, 0)		
 			Tx# = GetPointerX ( )
 			Ty# = GetPointerY ( )
 			SetSpritePosition (torresB[k], Tx#-30, Ty#-30)

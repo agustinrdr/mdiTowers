@@ -10,6 +10,10 @@ function initStartScreen()
 	AddVirtualButton(2, displayWidth*0.5+6, displayHeight*0.6+206, 180)
 	SetVirtualButtonAlpha(2, 0)
 	SetVirtualButtonText(2, "Salir")
+		CreateText(3,"Ubica la torre en el mapa")
+		SetTextColorAlpha (3, 0)
+		SetTextSize(3,40)
+		SetTextPosition(3,520,700)
 endfunction
 
 function salir()
@@ -28,12 +32,22 @@ function iniciar()
 		CreateSprite(2,2)
 		crearEnemigo()
 		CrearBotonTorre ()	
-		ResetTimer() // resetea el timer
+		ResetTimer() // resetea el timer					
+	
+		while (vidas>0)	
+			jugar()
+		endwhile
+	
+		if (vidas = 0)
+			ShowGameOverScreen()
+		endif
 		
-		//Aray de torres tipo A
-			
+	endif
+endfunction
+
+function jugar()
+
 	// Carga el timer y borra los botones anteriores
-	while (vidas>0)	
 		a#=timer()
 		reloj(a#)
 		SetVirtualButtonActive(1, 0)
@@ -48,20 +62,20 @@ function iniciar()
 			LlegaALaBase ()	
 			
 		if GetVirtualButtonPressed (3) // iniciar torre A si toca el boton
-			torrea() 				
+			torrea()	
 		endif
 		
 		if GetVirtualButtonPressed (5) // iniciar torre B si toca el boton
 			torreb()			
 		endif
 		
-		if stack >= 1
-			fijar ()
+		if stack >= 1			
+			fijar ()			
 		endif
-			
+		
 		if stack2 >= 1
 			fijar2 ()
-		endif
+		endif			
 		
 		//TEST
 		if GetSeconds() = 5
@@ -73,15 +87,8 @@ function iniciar()
 		endif
 		
 		sync()
-	endwhile	
-		
-		if (vidas = 0)
-			ShowGameOverScreen()
-		endif
-		
-	endif
-endfunction
 
+endfunction
 			
 function indicadores()			
 	// Muestra indicadores varios
@@ -90,6 +97,7 @@ function indicadores()
 		Print ("Puntos: "+ str(puntuacion))
 		Print ("Monedas: "+ str(monedas))
 		Print ("Vidas: "+ str(vidas))
+
 endfunction
 
 function ShowGameOverScreen() 
@@ -100,7 +108,7 @@ function ShowGameOverScreen()
 		SetVirtualButtonVisible(6,0) //desaparecer el botón de la torreB
 		LoadImage(6,"GAMEOVER.png")
 		CreateSprite(6,6)
-		CreateText(2,"Presione ESC para salir")
+		CreateText(2,"Presiona ESC para salir")
 		SetTextSize(2,40)
 		SetTextPosition(2,520,510)
 endfunction

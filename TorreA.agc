@@ -1,6 +1,7 @@
 #include "startscreen.agc"
 global i=0 //maximo 
 global stack = 0
+
 function torreA () 
 if  monedas >= 5
 	i=i+1
@@ -8,14 +9,19 @@ if  monedas >= 5
 	SetSpriteVisible  (torresA[i], 0)
 	SetSpriteActive (torresA[i], 0)
 	SetSpriteSize (torresA [i], 60, 60)
-	SetSpritePosition (torresA[i], mouseX, mouseY)	//arreglar para que siga el puntero con sync (?)	
+	SetSpritePosition (torresA[i], mouseX, mouseY)
 	stack = stack + 1	
-	monedas=monedas-5 	
+	monedas=monedas-5
+	
 endif
 endfunction
 function fijar ()
-	if ( GetPointerPressed ( ) = 1 )
-		if stack > 0
+	if stack > 0
+		if ( GetPointerPressed ( ) = 0 )
+			SetTextColorAlpha (3, 255)
+		else
+			SetTextColorAlpha (3, 0)
+		
 			Tx# = GetPointerX ( )
 			Ty# = GetPointerY ( )
 			SetSpritePosition (torresA[i], Tx#-30, Ty#-30 )
@@ -27,4 +33,10 @@ function fijar ()
 	endif
 endfunction
 
+function rotarTorre() //NO FUNCIONA
+	if stack > 0
+		angle = ATan2(RobotX#, RobotY#)
+		SetSpriteAngle(torresA[i],angle)
+	endif
+endfunction
 
