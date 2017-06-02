@@ -1,10 +1,10 @@
 function CrearBotonTorre ()
 	LoadImage(4,"towerDefense_tile206.png")
 	LoadImage(5,"towerDefense_tile205.png")
-	AddVirtualButton(3,300,80,100) //activo
-	AddVirtualButton(4,300,80,110) //no activo	
-	AddVirtualButton (5,450,80,100)
-	AddVirtualButton (6,450,80,100)
+	AddVirtualButton(3,300,70,100) //activo
+	AddVirtualButton(4,300,70,110) //no activo	
+	AddVirtualButton (5,410,70,100)
+	AddVirtualButton (6,410,70,100)
 	SetVirtualButtonImageUp(6,5)
 	SetVirtualButtonImageDown (6,5)
 	SetVirtualButtonImageUp(4,4)

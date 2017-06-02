@@ -13,7 +13,7 @@ function initStartScreen()
 		CreateText(3,"Ubica la torre en el mapa")
 		SetTextColorAlpha (3, 0)
 		SetTextSize(3,40)
-		SetTextPosition(3,520,700)
+		SetTextPosition(3,540,55)
 endfunction
 
 function salir()
@@ -64,18 +64,23 @@ function jugar()
 			
 		if GetVirtualButtonPressed (3) // iniciar torre A si toca el boton
 			torrea()	
+			
 		endif
 		
 		if GetVirtualButtonPressed (5) // iniciar torre B si toca el boton
-			torreb()			
+			torreb()		
+				
 		endif
 		
 		if stack >= 1 or stack2>=1
 			SetSpriteImage (2,9)
+			SetTextColorAlpha (3, 200)
 			fijar ()
 			fijar2 ()
+			
 		else
 			SetSpriteImage (2,2)
+			SetTextColorAlpha (3, 0)
 		endif		
 		
 		sync()
