@@ -29,6 +29,7 @@ function iniciar()
 		LoadImage (7, "towerDefense_tile249.png")
 		LoadImage (8, "towerDefense_tile250.png")
 		LoadImage(3, "towerDefense_tile248.png")
+		Loadimage (9, "fondotorre.png")
 		CreateSprite(2,2)
 		crearEnemigo()
 		CrearBotonTorre ()	
@@ -69,22 +70,13 @@ function jugar()
 			torreb()			
 		endif
 		
-		if stack >= 1			
-			fijar ()			
-		endif
-		
-		if stack2 >= 1
+		if stack >= 1 or stack2>=1
+			SetSpriteImage (2,9)
+			fijar ()
 			fijar2 ()
-		endif			
-		
-		//TEST
-		if GetSeconds() = 5
-			monedas = 10
-		endif
-		
-		if GetSeconds() = 15
-			monedas = monedas+10
-		endif
+		else
+			SetSpriteImage (2,2)
+		endif		
 		
 		sync()
 
@@ -97,6 +89,8 @@ function indicadores()
 		Print ("Puntos: "+ str(puntuacion))
 		Print ("Monedas: "+ str(monedas))
 		Print ("Vidas: "+ str(vidas))
+		print ("y:"+ str(py))
+		print ("x:" +str(px))
 
 endfunction
 
