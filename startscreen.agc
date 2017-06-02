@@ -30,6 +30,7 @@ function iniciar()
 		LoadImage (8, "towerDefense_tile250.png")
 		LoadImage(3, "towerDefense_tile248.png")
 		Loadimage (9, "fondotorre.png")
+		LoadImage (10, "towerDefense_tile180.png")
 		CreateSprite(2,2)
 		crearEnemigo()
 		CrearBotonTorre ()	
@@ -64,20 +65,21 @@ function jugar()
 			
 		if GetVirtualButtonPressed (3) // iniciar torre A si toca el boton
 			torrea()	
-			
+		elseif GetVirtualButtonPressed (5) // iniciar torre B si toca el boton
+			torreb()	
 		endif
 		
-		if GetVirtualButtonPressed (5) // iniciar torre B si toca el boton
-			torreb()		
-				
-		endif
 		
-		if stack >= 1 or stack2>=1
+		
+		if stack >= 1
 			SetSpriteImage (2,9)
 			SetTextColorAlpha (3, 200)
 			fijar ()
+		elseif stack2>=1
+			SetSpriteImage (2,9)
+			SetTextColorAlpha (3, 200)
 			fijar2 ()
-			
+			//collisionb ()
 		else
 			SetSpriteImage (2,2)
 			SetTextColorAlpha (3, 0)
@@ -94,8 +96,6 @@ function indicadores()
 		Print ("Puntos: "+ str(puntuacion))
 		Print ("Monedas: "+ str(monedas))
 		Print ("Vidas: "+ str(vidas))
-		print ("y:"+ str(py))
-		print ("x:" +str(px))
 
 endfunction
 

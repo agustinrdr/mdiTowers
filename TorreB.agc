@@ -25,24 +25,23 @@ function fijar2 ()
 			ty=ty-30
 			px= Tx
 			py= Ty
-			
-			if Tx>=-7 and Tx<35 and Ty>493 and Ty<=728
+			if Tx>=9 and Tx<35 and Ty>=519 and Ty<=724
 			creartorreb ()
-			SetSpriteAngle (torresB[k], -90)
-			elseif Tx >=35 and Tx<=482 and Ty>493 and Ty<550
-			creartorreB ()
-			elseif Tx >=423 and Tx<=482 and Ty<=493 and ty >=107
-			SetSpriteAngle (torresB[k], -90)
+			SetSpriteAngle (torresb[k], -90)
+			elseif Tx >=9 and Tx<=482 and Ty>493 and Ty=<547
+			creartorreb ()
+			elseif Tx >=453 and Tx<=482 and Ty<=520 and ty >=140
+			SetSpriteAngle (torresb[k], -90)
 			creartorreb()
-			elseif Tx>482 and tx <1190 and Ty<=165 and Ty >=107
+			elseif Tx>482 and tx <1190 and Ty<=164 and Ty >=140
 			creartorreb ()
-			elseif Tx>=157 and Tx<=665 and ty >=671 and Ty <= 730
+			elseif Tx>=160 and Tx<=634 and ty >=676 and Ty <= 704
 			creartorreb ()
 			SetSpriteAngle (torresb[k], 180)
-			elseif Tx>=606 and tx<=665 and Ty<671 and Ty >=294
+			elseif Tx>=606 and tx<=635 and Ty<676 and Ty >=294
 			creartorreb ()
 			SetSpriteAngle (torresb[k], 90)
-			elseif Ty<=349 and ty>=295 and tx >665 and tx<1190
+			elseif Ty<=318 and ty>=294 and tx >606 and tx<1190
 			creartorreb ()
 			SetSpriteAngle (torresb[k], 180)
 			else
@@ -60,5 +59,3 @@ function creartorreb ()
 		SetSpriteVisible (torresB[k],1)
 		SetSpriteActive (torresB[k], 1)	
 endfunction
-	
-

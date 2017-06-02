@@ -49,10 +49,6 @@ FILE_5=TorreA.agc;-1
 FILE_6=TorreB.agc;-1
 
 [files]
-FILE_NAME_0=1;enemigo.agc;422;2
-FILE_NAME_1=0;BotonTorre.agc;255;3
-FILE_NAME_2=0;TorreA.agc;573;0
-FILE_NAME_3=0;TorreB.agc;845;1
 
 [project]
 description=
