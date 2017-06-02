@@ -24,14 +24,25 @@ function fijar ()
 			px= Tx
 			py= Ty
 			
-			if Tx>=0 and Tx<35
+			if Tx>=-7 and Tx<35 and Ty>493 and Ty<=728
 			creartorrea ()
+			SetSpriteAngle (torresA[i], -90)
 			elseif Tx >=35 and Tx<=482 and Ty>493 and Ty<550
 			creartorrea ()
 			elseif Tx >=423 and Tx<=482 and Ty<=493 and ty >=107
+			SetSpriteAngle (torresA[i], -90)
 			creartorrea()
 			elseif Tx>482 and tx <1190 and Ty<=165 and Ty >=107
 			creartorrea ()
+			elseif Tx>=157 and Tx<=665 and ty >=671 and Ty <= 730
+			creartorreA ()
+			SetSpriteAngle (torresA[i], 180)
+			elseif Tx>=606 and tx<=665 and Ty<671 and Ty >=294
+			creartorreA ()
+			SetSpriteAngle (torresA[i], 90)
+			elseif Ty<=349 and ty>=295 and tx >665 and tx<1190
+			creartorreA ()
+			SetSpriteAngle (torresA[i], 180)
 			else
 				monedas=monedas+5
 				DeleteSprite (torresa [i])
