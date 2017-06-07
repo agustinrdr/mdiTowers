@@ -67,9 +67,7 @@ function jugar()
 			torrea()	
 		elseif GetVirtualButtonPressed (5) // iniciar torre B si toca el boton
 			torreb()	
-		endif
-		
-		
+		endif	
 		
 		if stack >= 1
 			SetSpriteImage (2,9)
@@ -91,8 +89,8 @@ endfunction
 			
 function indicadores()			
 	// Muestra indicadores varios
-		Print("X: "+str(RobotX#,1))
-		Print("Y: "+str(RobotY#,1))
+		Print("X: "+str(GetSpriteX(3),1))
+		Print("Y: "+str(GetSpriteY(3),1))
 		Print ("Puntos: "+ str(puntuacion))
 		Print ("Monedas: "+ str(monedas))
 		Print ("Vidas: "+ str(vidas))

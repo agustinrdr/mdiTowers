@@ -19,8 +19,7 @@ function Initialise()
 	SetScissor( 0,0,0,0 ) // Margen de borde negro
 	UseNewDefaultFonts( 1 ) // Fuentes
 	LoadImage(1,"MenuTerminado02.png")
-	CreateSprite(1,1)
-	
+	CreateSprite(1,1)	
 
 endfunction
 
