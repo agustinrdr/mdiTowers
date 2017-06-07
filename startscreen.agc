@@ -105,6 +105,10 @@ function ShowGameOverScreen()
 		SetVirtualButtonVisible(4,0) //desaparecer el botón de la torre
 		SetVirtualButtonVisible(5,0) //desaparecer el botón de la torreB
 		SetVirtualButtonVisible(6,0) //desaparecer el botón de la torreB
+		if vidas <= 0
+			SetTextColorAlpha (3, 0)
+		endif
+		
 		LoadImage(6,"GAMEOVER.png")
 		CreateSprite(6,6)
 		CreateText(2,"Presiona ESC para salir")
