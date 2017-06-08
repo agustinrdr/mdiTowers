@@ -59,3 +59,24 @@ function creartorreb ()
 		SetSpriteVisible (torresB[k],1)
 		SetSpriteActive (torresB[k], 1)	
 endfunction
+function colisiontorreb () // para que no se puedan superponer las torres de valor 10
+	if k=2
+		if GetSpriteCollision(torresB[k], torresB[k-1])
+			monedas=monedas+10
+			DeleteSprite (torresB [K])
+			k=k-1
+		endif
+	endif
+	if k = 3
+		if GetSpriteCollision(torresb[k], torresb[k-1])
+			monedas=monedas+10
+			DeleteSprite (torresb [k])
+			k=k-1
+		elseif GetSpriteCollision(torresb[k], torresb[k-2])
+			monedas=monedas+5
+			DeleteSprite (torresb [k])
+			k=k-1
+		endif
+	endif
+endfunction
+

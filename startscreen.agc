@@ -73,11 +73,12 @@ function jugar()
 			SetSpriteImage (2,9)
 			SetTextColorAlpha (3, 200)
 			fijar ()
+			colisiontorrea ()
 		elseif stack2>=1
 			SetSpriteImage (2,9)
 			SetTextColorAlpha (3, 200)
 			fijar2 ()
-			//collisionb ()
+			colisiontorreb ()
 		else
 			SetSpriteImage (2,2)
 			SetTextColorAlpha (3, 0)

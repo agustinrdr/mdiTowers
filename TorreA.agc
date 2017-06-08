@@ -57,3 +57,38 @@ function creartorreA ()
 		SetSpriteVisible (torresA[i],1)
 		SetSpriteActive (torresA[i], 1)	
 endfunction
+function colisiontorrea () // para que no se puedan superponer las torres de valor 5
+	if i=2
+		if GetSpriteCollision(torresA[i], torresa[i-1])
+			monedas=monedas+5
+			DeleteSprite (torresa [i])
+			i=i-1
+		endif
+	endif
+	if i = 3
+		if GetSpriteCollision(torresA[i], torresa[i-1])
+			monedas=monedas+5
+			DeleteSprite (torresa [i])
+			i=i-1
+		elseif GetSpriteCollision(torresA[i], torresa[i-2])
+			monedas=monedas+5
+			DeleteSprite (torresa [i])
+			i=i-1
+		endif
+	endif
+	if i = 4
+		if GetSpriteCollision(torresA[i], torresa[i-1])
+			monedas=monedas+5
+			DeleteSprite (torresa [i])
+			i=i-1
+		elseif GetSpriteCollision(torresA[i], torresa[i-2])
+			monedas=monedas+5
+			DeleteSprite (torresa [i])
+			i=i-1
+		elseif GetSpriteCollision(torresA[i], torresa[i-3])
+			monedas=monedas+5
+			DeleteSprite (torresa [i])
+			i=i-1
+		endif
+	endif
+endfunction

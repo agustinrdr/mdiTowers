@@ -49,6 +49,9 @@ FILE_5=TorreA.agc;-1
 FILE_6=TorreB.agc;-1
 
 [files]
+FILE_NAME_0=1;startscreen.agc;1947;2
+FILE_NAME_1=0;TorreA.agc;2349;1
+FILE_NAME_2=0;TorreB.agc;1586;0
 
 [project]
 description=
