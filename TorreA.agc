@@ -23,6 +23,7 @@ function fijar ()
 			ty=ty-30
 			px= Tx
 			py= Ty
+			
 			if Tx>=9 and Tx<35 and Ty>=519 and Ty<=724
 			creartorrea ()
 			SetSpriteAngle (torresA[i], -90)
@@ -49,6 +50,7 @@ function fijar ()
 			endif
 		stack=stack-1	
 		endif
+		
 	endif
 endfunction
 
@@ -56,6 +58,7 @@ function creartorreA ()
 		SetSpritePosition (torresA[i], px, py)
 		SetSpriteVisible (torresA[i],1)
 		SetSpriteActive (torresA[i], 1)	
+		
 endfunction
 function colisiontorrea () // para que no se puedan superponer las torres de valor 5
 	if i=2
@@ -91,4 +94,8 @@ function colisiontorrea () // para que no se puedan superponer las torres de val
 			i=i-1
 		endif
 	endif
+endfunction
+ 
+function seguimiento()
+	
 endfunction

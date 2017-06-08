@@ -4,8 +4,8 @@
 	global destinoX# = 0
 	global destinoY# = 0
 	global baseX# = 1160
-	global baseY# = 200	
-
+	global baseY# = 200
+	
 function crearEnemigo()
 	CreateSprite(3,3)
 	SetSpriteAngle(3,-90)
@@ -19,8 +19,6 @@ function Menemigo()
 	
 	destinoY# = 580	
 	if(GetSpriteY(3) <> destinoY# )
-		
-		
 		positionY# = positionY# - 2
 		SetSpritePosition(3, positionX#, positionY#)
 	endif
@@ -89,4 +87,4 @@ function movEnemigos()
 		endif
 		
 endfunction
-	
+

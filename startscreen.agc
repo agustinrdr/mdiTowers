@@ -2,6 +2,7 @@
 #include "BotonTorre.agc"
 #include "TorreA.agc"
 #include "TorreB.agc"
+#include "balas.agc"
 
 function initStartScreen()
 	// Creación de botones virtuales
@@ -33,6 +34,7 @@ function iniciar()
 		LoadImage (10, "towerDefense_tile180.png")
 		CreateSprite(2,2)
 		crearEnemigo()
+		initBullets()
 		CrearBotonTorre ()	
 		ResetTimer() // resetea el timer					
 	
@@ -48,7 +50,6 @@ function iniciar()
 endfunction
 
 function jugar()
-
 	// Carga el timer y borra los botones anteriores
 		a#=timer()
 		reloj(a#)
@@ -61,13 +62,14 @@ function jugar()
 			iniciarbotones()		//botonera para colocar torres
 			indicadores()
 			movEnemigos()
-			LlegaALaBase ()	
+			LlegaALaBase()	
 			
 		if GetVirtualButtonPressed (3) // iniciar torre A si toca el boton
-			torrea()	
+			torrea()
+		
 		elseif GetVirtualButtonPressed (5) // iniciar torre B si toca el boton
 			torreb()	
-		endif	
+		endif	  
 		
 		if stack >= 1
 			SetSpriteImage (2,9)
@@ -82,8 +84,13 @@ function jugar()
 		else
 			SetSpriteImage (2,2)
 			SetTextColorAlpha (3, 0)
-		endif		
+		endif
 		
+		if GetRawKeyPressed(80)
+			playerShoot()
+		endif
+		
+		UpdatePlayerBullet()
 		sync()
 
 endfunction
