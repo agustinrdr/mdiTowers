@@ -43,15 +43,31 @@ endfunction
 
 function UpdatePlayerBullet()
 	if playerBullet.active = 0 then exitfunction //The bullet hasn't been fired so nothing to do here
-	
-	playerBullet.x = playerBullet.x-playerBullet.speed
-	//playerBullet.y = playerBullet.y-playerBullet.speed //Update the position of the bullet
-	
-	if playerBullet.x < 30 //Bullet has gone off the top of the screen
+	if pos = 0
+		playerBullet.x = playerBullet.x-playerBullet.speed
+	endif
+	if pos = 1
+		playerBullet.x = playerBullet.x+playerBullet.speed
+	endif
+	if pos = 2
+		playerBullet.y = playerBullet.y+playerBullet.speed		
+	endif
+	if pos = 3
+		playerBullet.y = playerBullet.y-playerBullet.speed
+	endif
+	if playerBullet.x < 0 //Bullet has gone off the top of the screen
 		KillPlayerBullet()
 		exitfunction 
 	endif
-	if playerBullet.y < 30 //Bullet has gone off the top of the screen
+	if playerBullet.x > 1370 //Bullet has gone off the top of the screen
+		KillPlayerBullet()
+		exitfunction 
+	endif
+	if playerBullet.y < 0 //Bullet has gone off the top of the screen
+		KillPlayerBullet()
+		exitfunction 
+	endif
+	if playerBullet.y > 768 //Bullet has gone off the top of the screen
 		KillPlayerBullet()
 		exitfunction 
 	endif
