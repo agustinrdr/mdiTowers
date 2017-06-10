@@ -1,5 +1,7 @@
 global displayWidth as integer
 global displayHeight as integer
+#constant TRUE 1
+#constant FALSE 0
 
 function Initialise()	
 	displayWidth = 1370

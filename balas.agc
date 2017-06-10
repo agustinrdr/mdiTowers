@@ -1,48 +1,47 @@
 
 type tBullet
-	active as integer	//  Is the bullet currently in use
-	spr as integer		//  The sprite ID of the bullet
-	x as float			//  The horizontal position of the bullet
-	y as float			//  The vertical position of the bullet
-	speed as float		/*  The speed that the bullet can move
-							Because we have put the speed variable in the UDT instead of
-							having a separate variable for speed, it means that each bullet could
-							potentially move at a different speed.  This hasn't been included
-							yet but it is ready for you to implement. */
+	active as integer	//  si está en uso
+	spr as integer		//  id de la bala
+	x as float
+	y as float
+	speed as float
+	fuego as integer
 endtype
 
 global playerBullet as tBullet
 
 function initBullets()
 	playerBullet.speed = 12
-	//load player bullet from the atlas texture and create sprite
 	LoadImage(11, "bala.png")
 	CreateSprite(11, 11)
+	SetSpriteSize(11, 60, 60)
 	playerBullet.spr = 11
 	SetSpriteVisible(playerBullet.spr, 0)
 
-	//create 20 copies of the bullet sprite
-/*	for k = 1 to 20
-		playerBullet[k] = playerBullet[0]
-		playerBullet[k].spr = CloneSprite(playerBullet[0].spr)
-	next k
+	//para crear 20 copias del sprite
+/*	for h = 1 to 20
+		playerBullet[h] = playerBullet[0]
+		playerBullet[h].spr = CloneSprite(playerBullet[0].spr)
+	next h
 	*/
 endfunction
 
-//This gets called from 'input.agc' if the shoot button is pressed
+//Se debería llamar en startscreen si detecta a un enemigo dentro del rango
 function playerShoot()
-	if playerBullet.active = 1 then exitfunction //In Space Invaders the player can only fire one bullet at a time 
+	if playerBullet.active = 1 then exitfunction //dispara de a una bala a la vez
 	
 	playerBullet.active = 1
-	//position bullet just above the players turret
-	playerBullet.x = GetSpriteX(torresA[i])+GetSpriteWidth(torresA[i])-94
-	playerBullet.y = GetSpriteY(torresA[i])-(GetSpriteHeight(torresA[i]))+26
-	SetSpritePosition(playerBullet.spr, playerBullet.x, playerBullet.y)
+	
+	//ubicación de la bala
+	playerBullet.x = GetSpriteX(torresA[i])+GetSpriteWidth(torresA[i])-60
+	playerBullet.y = GetSpriteY(torresA[i])-(GetSpriteHeight(torresA[i]))+60
+	SetSpritePosition(playerBullet.spr, playerBullet.x, playerBullet.y)	
 	SetSpriteVisible(playerBullet.spr, 1)
 endfunction
 
 function UpdatePlayerBullet()
-	if playerBullet.active = 0 then exitfunction //The bullet hasn't been fired so nothing to do here
+	if playerBullet.active = 0 then exitfunction //no se ha disparado
+	
 	if pos = 0
 		playerBullet.x = playerBullet.x-playerBullet.speed
 	endif
@@ -55,39 +54,41 @@ function UpdatePlayerBullet()
 	if pos = 3
 		playerBullet.y = playerBullet.y-playerBullet.speed
 	endif
-	if playerBullet.x < 0 //Bullet has gone off the top of the screen
-		KillPlayerBullet()
-		exitfunction 
-	endif
-	if playerBullet.x > 1370 //Bullet has gone off the top of the screen
-		KillPlayerBullet()
-		exitfunction 
-	endif
-	if playerBullet.y < 0 //Bullet has gone off the top of the screen
-		KillPlayerBullet()
-		exitfunction 
-	endif
-	if playerBullet.y > 768 //Bullet has gone off the top of the screen
-		KillPlayerBullet()
-		exitfunction 
-	endif
 	
-	
+	//terminar si sale de los límites de la pantalla
+	if playerBullet.x < 0
+		KillPlayerBullet()
+		exitfunction 
+	endif
+	if playerBullet.x > 1370
+		KillPlayerBullet()
+		exitfunction 
+	endif
+	if playerBullet.y < 0
+		KillPlayerBullet()
+		exitfunction 
+	endif
+	if playerBullet.y > 768
+		KillPlayerBullet()
+		exitfunction 
+	endif		
+
 	/*
-	//Check to see if the player Bullet has collided with a base
-	for k = 0 to 3
-		if GetSpriteCollision(playerBullet.spr, base[k]) = FALSE
-			continue  /* 	The 'continue' keyword is a confusingly named one.
-							It is a premature 'next' command in much the same way that
-							'exitfunction' is a premature 'endfunction' command.
-							In this case we will restart the loop with the next value of k */
-		//endif
-		//Bullet has hit a base so kill the bullet
-		//KillPlayerBullet()
-		//exitfunction // no point checking the other bases so we can leave this function now
-	//next k
+	//Para ver si la bala choca con una torre
+		for l = 0 to 5
+			if GetSpriteExists(torresa[l]) = 0
+				exitfunction			
+			elseif i = l OR GetSpriteCollision(playerBullet.spr, torresa[l]) = 0
+				continue  //Se reinicia el bucle con el siguiente valor de l 
+			else
+			//Chocó con otra torre así que eliminamos la bala
+			KillPlayerBullet()
+			exitfunction
+			endif
+		next l
+*/
 	
-	//Now that the bullets position has been calculated - let's show it
+	//actualiza la posición de la bala
 	SetSpritePosition(playerBullet.spr, playerBullet.x, playerBullet.y)
 endfunction
 
@@ -95,17 +96,16 @@ function KillPlayerBullet()
 	SetSpriteVisible(playerBullet.spr, 0)
 	playerBullet.active = 0
 endfunction
-/*
-function GetEnemyHit(x,y)
-	if playerBullet.active = FALSE
-		exitfunction FALSE // Player bullet has not been fired so no point checking collision
+
+function enemigoRecibeBala() //función booleana, devuelve 0 o 1
+	if playerBullet.active = FALSE	//si no hay bala activa
+		exitfunction 0
 	endif
-	if enemy[x,y].alive = FALSE
-		exitfunction FALSE // Enemy is dead so no point checking for collision
+	if GetSpriteActive(3)=0	//si no hay enemigo activo
+		exitfunction 0
 	endif
-	if GetSpriteCollision(enemy[x,y].spr, playerBullet.spr) // bullet has hit enemy
-		KillPlayerBullet()
-		exitfunction TRUE
+	if GetSpriteCollision(3, playerBullet.spr) //si la bala chocó con el enemigo
+			KillPlayerBullet()
+			exitfunction 1
 	endif
-endfunction FALSE
-*/
+endfunction 0

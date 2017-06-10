@@ -11,10 +11,11 @@ function initStartScreen()
 	AddVirtualButton(2, displayWidth*0.5+6, displayHeight*0.6+206, 180)
 	SetVirtualButtonAlpha(2, 0)
 	SetVirtualButtonText(2, "Salir")
-		CreateText(3,"Ubica la torre en el mapa")
-		SetTextColorAlpha (3, 0)
-		SetTextSize(3,40)
-		SetTextPosition(3,540,55)
+	// Texto
+	CreateText(3,"Ubica la torre en el mapa")
+	SetTextColorAlpha (3, 0)
+	SetTextSize(3,40)
+	SetTextPosition(3,540,55)
 endfunction
 
 function salir()
@@ -27,11 +28,12 @@ function iniciar()
 	if GetVirtualButtonPressed(1)
 		
 		LoadImage(2, "CaminoFinal.png")	
-		LoadImage (7, "towerDefense_tile249.png")
-		LoadImage (8, "towerDefense_tile250.png")
-		LoadImage(3, "towerDefense_tile248.png")
+		LoadImage (7, "towerDefense_tile249.png") //torre a
+		LoadImage (8, "towerDefense_tile250.png") //torre b
+		LoadImage(3, "towerDefense_tile248.png") //enemigo
 		Loadimage (9, "fondotorre.png")
-		LoadImage (10, "towerDefense_tile180.png")
+		LoadImage (10, "towerDefense_tile180.png") //base fija de las torres - no usada
+		
 		CreateSprite(2,2)
 		crearEnemigo()
 		initBullets()
@@ -43,13 +45,15 @@ function iniciar()
 		endwhile
 	
 		if (vidas = 0)
+			SetSpriteVisible(3,0) //esconde al enemigo			
 			ShowGameOverScreen()
 		endif
 		
 	endif
 endfunction
 
-function jugar()
+function jugar() //toda la función se repite while vidas>0
+	
 	// Carga el timer y borra los botones anteriores
 		a#=timer()
 		reloj(a#)
@@ -86,9 +90,18 @@ function jugar()
 			SetTextColorAlpha (3, 0)
 		endif
 		
-		if GetRawKeyPressed(80)
-			playerShoot()
-		endif
+		if i>0 // Cuando hay al menos una torre tipo A
+			if GetRawKeyPressed(80) //Se dispara al presionar la P
+				playerShoot()
+			endif
+			if GetSpriteDistance(3, torresA[i]) < 10 //Se dispara si la distancia es 10 pixeles
+				playerShoot()				
+			endif
+			if enemigoRecibeBala()=1
+				killEnemy()
+				crearEnemigo()
+			endif
+		endif		
 		
 		UpdatePlayerBullet()
 		sync()
@@ -111,9 +124,7 @@ function ShowGameOverScreen()
 		SetVirtualButtonVisible(4,0) //desaparecer el botón de la torre
 		SetVirtualButtonVisible(5,0) //desaparecer el botón de la torreB
 		SetVirtualButtonVisible(6,0) //desaparecer el botón de la torreB
-		if vidas <= 0
-			SetTextColorAlpha (3, 0)
-		endif
+		SetTextColorAlpha (3, 0)
 		
 		LoadImage(6,"GAMEOVER.png")
 		CreateSprite(6,6)
@@ -135,4 +146,3 @@ function reloj(sec as float)
         sec = trunc(sec)
         Print(right("00"+str(min,0),2)+":"+right("00"+str(sec,0),2))
 endfunction
-
