@@ -25,27 +25,47 @@ function fijar ()
 			px= Tx
 			py= Ty
 			
-			if Tx>=9 and Tx<35 and Ty>=519 and Ty<=724
+			if Tx>=9 and Tx=<35 and Ty>=549 and Ty<=724
 				creartorrea ()
 				SetSpriteAngle (torresA[i], -90)
 				pos = 1
-			elseif Tx >=9 and Tx<=482 and Ty>493 and Ty=<547
+			elseif Tx>=9 and Tx<77 and Ty>=519 and Ty<=550
+				creartorrea ()
+				SetSpriteAngle (torresA[i], -45)
+				pos = 1	
+			elseif Tx >=9 and Tx<=440 and Ty>493 and Ty=<547
 				creartorrea ()
 				pos=2
-			elseif Tx >=453 and Tx<=482 and Ty<=520 and ty >=140
+			elseif Tx >=445 and Tx<=482 and Ty>=520 and Ty=<547
+				creartorrea ()
+				SetSpriteAngle (torresA[i], -45)
+				pos=2	
+			elseif Tx >=453 and Tx<=482 and Ty<=520 and ty >210
 				SetSpriteAngle (torresA[i], -90)
 				creartorrea()
-				pos=1
+				pos=1	
+			elseif Tx>453 and tx <=482 and Ty<=210 and Ty >=140
+				creartorrea ()
+				SetSpriteAngle (torresA[i], -45)
+				pos=1	
 			elseif Tx>482 and tx <1190 and Ty<=164 and Ty >=140
 				creartorrea ()
 				pos=2
-			elseif Tx>=160 and Tx<=634 and ty >=676 and Ty <= 704
+			elseif Tx>=160 and Tx<=580 and ty >=676 and Ty <= 705
 				creartorreA ()
 				pos=3
 				SetSpriteAngle (torresA[i], 180)
-			elseif Tx>=606 and tx<=635 and Ty<676 and Ty >=294
+			elseif Tx>580 and Tx<=634 and ty >650 and Ty <= 704
+				creartorreA ()
+				pos=3
+				SetSpriteAngle (torresA[i], 135)	
+			elseif Tx>=606 and tx<=635 and Ty<676 and Ty >=319
 				creartorreA ()
 				SetSpriteAngle (torresA[i], 90)
+				pos=0
+			elseif Tx>=606 and tx<=635 and Ty<319 and Ty >=293
+				creartorreA ()
+				SetSpriteAngle (torresA[i], 135)
 				pos=0
 			elseif Ty<=318 and ty>=294 and tx >606 and tx<1190
 				creartorreA ()
