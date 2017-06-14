@@ -51,8 +51,18 @@ function UpdatePlayerBullet()
 	if pos = 2
 		playerBullet.y = playerBullet.y+playerBullet.speed		
 	endif
+	
 	if pos = 3
 		playerBullet.y = playerBullet.y-playerBullet.speed
+	endif
+	
+	if pos = 4
+		playerBullet.y = playerBullet.y-playerBullet.speed
+		playerBullet.x = playerBullet.x-playerBullet.speed
+	endif
+	if pos = 5
+		playerBullet.y = playerBullet.y+playerBullet.speed
+		playerBullet.x = playerBullet.x+playerBullet.speed
 	endif
 	
 	//terminar si sale de los límites de la pantalla
