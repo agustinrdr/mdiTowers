@@ -91,9 +91,6 @@ function jugar() //toda la función se repite while vidas>0
 		endif
 		
 		if i>0 // Cuando hay al menos una torre tipo A
-			if GetRawKeyPressed(80) //Se dispara al presionar la P
-				playerShoot()
-			endif
 			if GetSpriteDistance(3, torresA[i]) < 10 //Se dispara si la distancia es 10 pixeles
 				playerShoot()				
 			endif
