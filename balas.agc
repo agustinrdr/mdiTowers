@@ -15,6 +15,7 @@ function initBullets()
 	LoadImage(11, "bala.png")
 	CreateSprite(11, 11)
 	SetSpriteSize(11, 60, 60)
+	SetSpriteShape(11,3)
 	playerBullet.spr = 11
 	SetSpriteVisible(playerBullet.spr, 0)
 
