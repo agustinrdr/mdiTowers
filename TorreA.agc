@@ -2,18 +2,18 @@
 global i=0 //maximo 
 global stack = 0
 global pos = 0
+
+global t 
+
 function torreA () 
-if  monedas >= 5
-	i=i+1
-	torresA [i] = CreateSprite (7)
-	SetSpriteVisible  (torresA[i], 0)
-	SetSpriteActive (torresA[i], 0)
-	SetSpriteSize (torresA [i], 60, 60)
-	SetSpritePosition (torresA[i], mouseX, mouseY)
-	stack = stack + 1	
-	monedas=monedas-5 	
-	
-endif
+	for t=1 to 4
+	torresA [t] = CreateSprite (7)
+	SetSpriteVisible  (torresA[t], 0)
+	SetSpriteActive (torresA[t], 0)
+	SetSpriteSize (torresA [t], 60, 60)
+	SetSpritePosition (torresA[t], mouseX, mouseY)	
+	next t
+
 endfunction
 function fijar ()
 	if stack > 0
@@ -33,7 +33,7 @@ function fijar ()
 				creartorrea ()
 				SetSpriteAngle (torresA[i], -45)
 				pos = 5	
-			elseif Tx >=9 and Tx<=440 and Ty>493 and Ty=<547
+			elseif Tx >=9 and Tx<=440 and Ty>519 and Ty=<547
 				creartorrea ()
 				pos=2
 			elseif Tx >=445 and Tx<=482 and Ty>=520 and Ty=<547
@@ -84,8 +84,9 @@ endfunction
 
 function creartorreA ()
 		SetSpritePosition (torresA[i], px, py)
+		monedas=monedas-5 
 		SetSpriteVisible (torresA[i],1)
-		SetSpriteActive (torresA[i], 1)	
+		SetSpriteActive (torresA[i], 1)
 endfunction
 
 function colisiontorrea () // para que no se puedan superponer las torres de valor 5
@@ -124,6 +125,3 @@ function colisiontorrea () // para que no se puedan superponer las torres de val
 	endif
 endfunction
  
-function seguimiento()
-	
-endfunction

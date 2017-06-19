@@ -37,13 +37,15 @@ function iniciar()
 		CreateSprite(2,2)
 		crearEnemigo()
 		initBullets()
+		initBullets2()
 		CrearBotonTorre ()	
-		ResetTimer() // resetea el timer					
-	
+		torrea()
+		torreb()
+		ResetTimer() // resetea el timer
 		while (vidas>0)	
 			jugar()
 		endwhile
-	
+
 		if (vidas = 0)
 			SetSpriteVisible(3,0) //esconde al enemigo			
 			ShowGameOverScreen()
@@ -69,10 +71,13 @@ function jugar() //toda la función se repite while vidas>0
 			LlegaALaBase()	
 			
 		if GetVirtualButtonPressed (3) // iniciar torre A si toca el boton
-			torrea()
-		
+			
+			stack = stack + 1	
+			i=i+1
 		elseif GetVirtualButtonPressed (5) // iniciar torre B si toca el boton
-			torreb()	
+			stack2=stack2+1
+			k=k+1	
+			
 		endif	  
 		
 		if stack >= 1
@@ -91,16 +96,41 @@ function jugar() //toda la función se repite while vidas>0
 		endif
 		
 		if i>0 // Cuando hay al menos una torre tipo A
-			if GetSpriteDistance(3, torresA[i]) < 10 //Se dispara si la distancia es 10 pixeles
-				playerShoot()				
+			if GetSpriteDistance(3, torresA[1]) < 40 //Se dispara si la distancia es 10 pixeles
+				playerShoota1()			
+			endif
+			if GetSpriteDistance(3, torresA[2]) < 40 //Se dispara si la distancia es 10 pixeles
+				playerShoota2()			
+			endif
+			if GetSpriteDistance(3, torresA[3]) < 40 //Se dispara si la distancia es 10 pixeles
+				playerShoota3()			
+			endif
+			if GetSpriteDistance(3, torresA[4]) < 40 //Se dispara si la distancia es 10 pixeles
+				playerShoota4()			
 			endif
 			if enemigoRecibeBala()=1
 				killEnemy()
 				crearEnemigo()
 			endif
-		endif		
+		endif
 		
+		if k>0 // Cuando hay al menos una torre tipo A
+			if GetSpriteDistance(3, torresb[1]) < 40 //Se dispara si la distancia es 10 pixeles
+				playerShootb1()				
+			endif
+			if GetSpriteDistance(3, torresb[2]) < 40 //Se dispara si la distancia es 10 pixeles
+				playerShootb2()				
+			endif
+			if GetSpriteDistance(3, torresb[3]) < 40 //Se dispara si la distancia es 10 pixeles
+				playerShootb3()				
+			endif
+			if enemigoRecibeBala2()=1
+				killEnemy()
+				crearEnemigo()
+			endif
+		endif		
 		UpdatePlayerBullet()
+		UpdatePlayerBullet2()
 		sync()
 
 endfunction
@@ -112,7 +142,8 @@ function indicadores()
 		Print ("Puntos: "+ str(puntuacion))
 		Print ("Monedas: "+ str(monedas))
 		Print ("Vidas: "+ str(vidas))
-
+		print ("x: " + str (px))
+		print ("y: " + str (py))
 endfunction
 
 function ShowGameOverScreen() 
