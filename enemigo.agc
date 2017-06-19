@@ -11,6 +11,7 @@ function crearEnemigo()
 	CreateSprite(3,3)
 	SetSpriteAngle(3,-90)
 	SetSpritePosition(3, 66, 690)
+	SetSpriteShape(3,3)
 endfunction
 
 //mueve al enemigo - primera mitad del camino
