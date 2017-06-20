@@ -3,6 +3,7 @@
 #include "TorreA.agc"
 #include "TorreB.agc"
 #include "balas.agc"
+global torres as torreActiva[8]
 
 function initStartScreen()
 	// Creación de botones virtuales
@@ -96,16 +97,16 @@ function jugar() //toda la función se repite while vidas>0
 		endif
 		
 		if i>0 // Cuando hay al menos una torre tipo A
-			if GetSpriteDistance(3, torresA[1]) < 40 //Se dispara si la distancia es 10 pixeles
+			if GetSpriteDistance(3, torresA[1]) < 40 //Se dispara si la distancia es 40
 				playerShoota1()			
 			endif
-			if GetSpriteDistance(3, torresA[2]) < 40 //Se dispara si la distancia es 10 pixeles
+			if GetSpriteDistance(3, torresA[2]) < 40 //Se dispara si la distancia es 40
 				playerShoota2()			
 			endif
-			if GetSpriteDistance(3, torresA[3]) < 40 //Se dispara si la distancia es 10 pixeles
+			if GetSpriteDistance(3, torresA[3]) < 40 //Se dispara si la distancia es 40
 				playerShoota3()			
 			endif
-			if GetSpriteDistance(3, torresA[4]) < 40 //Se dispara si la distancia es 10 pixeles
+			if GetSpriteDistance(3, torresA[4]) < 40 //Se dispara si la distancia es 40
 				playerShoota4()			
 			endif
 			if enemigoRecibeBala()=1
@@ -117,13 +118,13 @@ function jugar() //toda la función se repite while vidas>0
 		endif
 		
 		if k>0 // Cuando hay al menos una torre tipo A
-			if GetSpriteDistance(3, torresb[1]) < 40 //Se dispara si la distancia es 10 pixeles
+			if GetSpriteDistance(3, torresb[1]) < 40 //Se dispara si la distancia es 40
 				playerShootb1()				
 			endif
-			if GetSpriteDistance(3, torresb[2]) < 40 //Se dispara si la distancia es 10 pixeles
+			if GetSpriteDistance(3, torresb[2]) < 40 //Se dispara si la distancia es 40
 				playerShootb2()				
 			endif
-			if GetSpriteDistance(3, torresb[3]) < 40 //Se dispara si la distancia es 10 pixeles
+			if GetSpriteDistance(3, torresb[3]) < 40 //Se dispara si la distancia es 40
 				playerShootb3()				
 			endif
 			if enemigoRecibeBala2()=1
@@ -179,3 +180,13 @@ function reloj(sec as float)
         sec = trunc(sec)
         Print(right("00"+str(min,0),2)+":"+right("00"+str(sec,0),2))
 endfunction
+
+type torreActiva
+	torre as integer //torre madre
+	bala as tBullet
+	posicion as integer
+	id as integer
+	active as integer //0 inactiva, 1 activa
+endtype
+//array torres[id] va del 1 al 7 / del 1-4 son las torresA / del 5-7 las torresB
+
