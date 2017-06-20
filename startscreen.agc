@@ -8,6 +8,8 @@ global torres as torreActiva[8]
 global px as float
 global py as float
 
+global test as integer = 0
+
 function initStartScreen()
 	// Creación de botones virtuales
 	AddVirtualButton(1, displayWidth*0.5+6, displayHeight*0.6+20, 180)
@@ -35,7 +37,7 @@ function iniciar()
 		LoadImage (7, "towerDefense_tile249.png") //torre a
 		LoadImage (8, "towerDefense_tile250.png") //torre b
 		LoadImage(3, "towerDefense_tile248.png") //enemigo
-		Loadimage (9, "fondotorre.png")
+		Loadimage (9, "fondotorre.jpg")
 		LoadImage (10, "towerDefense_tile180.png") //base fija de las torres - no usada
 		
 		CreateSprite(2,2)
@@ -46,13 +48,18 @@ function iniciar()
 		torrea()
 		torreb()
 		ResetTimer() // resetea el timer
-		while (vidas>0)	
+		while (vidas>0 AND contadorenemigo < 20)	
 			jugar()
 		endwhile
 
 		if (vidas = 0)
 			SetSpriteVisible(3,0) //esconde al enemigo			
 			ShowGameOverScreen()
+		endif
+		
+		if (contadorenemigo = 20)
+			SetSpriteVisible(3,0)
+			ShowWinScreen()
 		endif
 		
 	endif
@@ -93,22 +100,21 @@ function jugar() //toda la función se repite while vidas>0
 			SetSpriteImage (2,2)
 			SetTextColorAlpha (3, 0)
 		endif
-	
-	
+		
 		if i>0 
-			if GetSpriteDistance(3, torresA[1]) < 37 //Se dispara si la distancia es 40
-				playerShoota1()			
+			if GetSpriteDistance(3, torresA[1]) < 25 //Se dispara si la distancia es 40			
+				playerShoota1()
 			endif
 			if i>1
-				if GetSpriteDistance(3, torresA[2]) < 37 //Se dispara si la distancia es 40
+				if GetSpriteDistance(3, torresA[2]) < 25 //Se dispara si la distancia es 40
 					playerShoota2()			
 				endif			
 				if i>2
-					if GetSpriteDistance(3, torresA[3]) < 37 //Se dispara si la distancia es 40
+					if GetSpriteDistance(3, torresA[3]) < 25 //Se dispara si la distancia es 40
 						playerShoota3()			
 					endif
 					if i>3
-						if GetSpriteDistance(3, torresA[4]) < 37 //Se dispara si la distancia es 40
+						if GetSpriteDistance(3, torresA[4]) < 25 //Se dispara si la distancia es 40
 							playerShoota4()			
 						endif
 					endif
@@ -123,15 +129,15 @@ function jugar() //toda la función se repite while vidas>0
 		endif 
 		
 		if k>0 
-			if GetSpriteDistance(3, torresb[1]) < 37 //Se dispara si la distancia es 40
+			if GetSpriteDistance(3, torresb[1]) < 25 //Se dispara si la distancia es 40
 				playerShootb1()				
 			endif
 			if k>1
-				if GetSpriteDistance(3, torresb[2]) < 37 //Se dispara si la distancia es 40
+				if GetSpriteDistance(3, torresb[2]) < 25 //Se dispara si la distancia es 40
 					playerShootb2()				
 				endif
 				if k>2
-					if GetSpriteDistance(3, torresb[3]) < 37 //Se dispara si la distancia es 40
+					if GetSpriteDistance(3, torresb[3]) < 25 //Se dispara si la distancia es 40
 						playerShootb3()				
 					endif
 				endif
@@ -174,6 +180,21 @@ function ShowGameOverScreen()
 		CreateText(2,"Presiona ESC para salir")
 		SetTextSize(2,40)
 		SetTextPosition(2,520,510)
+endfunction
+
+function ShowWinScreen()
+		SetVirtualButtonVisible(3,0) //desaparecer el botón de la torre
+		SetVirtualButtonVisible(4,0) //desaparecer el botón de la torre
+		SetVirtualButtonVisible(5,0) //desaparecer el botón de la torreB
+		SetVirtualButtonVisible(6,0) //desaparecer el botón de la torreB
+		SetTextColorAlpha (3, 0)
+		
+		CreateText(20,"Felicitaciones, ha ganado!")
+		CreateText(21,"Presione ESC para salir")
+		SetTextSize(20,40)
+		SetTextSize(21,40)
+		SetTextPosition(20,520,510)
+		SetTextPosition(21,520,560)
 endfunction
 
 function reloj(sec as float) 

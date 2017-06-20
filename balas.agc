@@ -10,11 +10,9 @@ endtype
 
 global playerBullet as tBullet
 global playerBullet2 as tBullet
-global balasExtra as tBullet[3]
-global balasExtra2 as tBullet[2]
 
 function initBullets()
-	playerBullet.speed = 6
+	playerBullet.speed = 8
 	LoadImage(11, "bala.png")
 	CreateSprite(11, 11)
 	SetSpriteSize(11, 60, 60)
@@ -39,6 +37,7 @@ function playerShoota1()
 	playerBullet.active = 1
 	torres[1].bala=playerBullet
 	playerBullet.posicion=torres[1].posicion
+	
 	//ubicación de la bala
 	playerBullet.x = GetSpriteX(torresA[1])+GetSpriteWidth(torresA[1])-60
 	playerBullet.y = GetSpriteY(torresA[1])-(GetSpriteHeight(torresA[1]))+60
