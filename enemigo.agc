@@ -6,12 +6,18 @@
 	global baseX# = 1160
 	global baseY# = 200
 	enemigoVivo = 1 //1 si está vivo, 0 si está muerto 
-	
+	global vidaenemigo = 0
+	global contadorenemigo = 0
 function crearEnemigo()
+	contadorenemigo = contadorenemigo+1
+	vidaenemigo = 20*contadorenemigo
 	CreateSprite(3,3)
 	SetSpriteAngle(3,-90)
 	SetSpritePosition(3, 66, 690)
 	SetSpriteShape(3,3)
+	
+	
+	
 endfunction
 
 //mueve al enemigo - primera mitad del camino

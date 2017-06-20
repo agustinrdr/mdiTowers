@@ -109,8 +109,10 @@ function jugar() //toda la función se repite while vidas>0
 				playerShoota4()			
 			endif
 			if enemigoRecibeBala()=1
-				killEnemy()
-				crearEnemigo()
+				if vidaenemigo = 0
+					killEnemy()
+					crearEnemigo()
+				endif
 			endif
 		endif
 		
@@ -125,8 +127,10 @@ function jugar() //toda la función se repite while vidas>0
 				playerShootb3()				
 			endif
 			if enemigoRecibeBala2()=1
-				killEnemy()
-				crearEnemigo()
+				if vidaenemigo <= 0
+					killEnemy()
+					crearEnemigo()
+				endif
 			endif
 		endif		
 		UpdatePlayerBullet()
@@ -144,6 +148,7 @@ function indicadores()
 		Print ("Vidas: "+ str(vidas))
 		print ("x: " + str (px))
 		print ("y: " + str (py))
+		print (vidaenemigo)
 endfunction
 
 function ShowGameOverScreen() 

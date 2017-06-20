@@ -250,8 +250,9 @@ function enemigoRecibeBala() //función booleana, devuelve 0 o 1
 		exitfunction 0
 	endif
 	if GetSpriteCollision(3, playerBullet.spr)  //si la bala chocó con el enemigo
-			KillPlayerBullet()
-			exitfunction 1
+		vidaenemigo= vidaenemigo-20
+		KillPlayerBullet()
+		exitfunction 1
 	endif		
 	/*if GetSpriteCollision(3, playerBullet2.spr2)	
 		KillPlayerBullet2()
@@ -269,7 +270,9 @@ function enemigoRecibeBala2()
 	endif
 	
 	if GetSpriteCollision(3, playerBullet2.spr2)	
+		vidaenemigo=vidaenemigo-40
 		KillPlayerBullet2()
 		exitfunction 1	
 	endif
 endfunction 0
+

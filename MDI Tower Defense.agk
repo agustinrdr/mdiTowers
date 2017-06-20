@@ -50,13 +50,10 @@ FILE_6=TorreB.agc;-1
 FILE_7=balas.agc;-1
 
 [files]
-FILE_NAME_0=0;main.agc;179;0
-FILE_NAME_1=1;startscreen.agc;1515;1
-FILE_NAME_2=0;initialise.agc;101;5
-FILE_NAME_3=0;enemigo.agc;1990;4
-FILE_NAME_4=0;TorreA.agc;82;2
-FILE_NAME_5=0;TorreB.agc;97;6
-FILE_NAME_6=0;balas.agc;1943;3
+FILE_NAME_0=0;startscreen.agc;4013;3
+FILE_NAME_1=1;TorreA.agc;121;1
+FILE_NAME_2=0;TorreB.agc;324;2
+FILE_NAME_3=0;balas.agc;7833;0
 
 [project]
 description=
