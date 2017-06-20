@@ -96,19 +96,19 @@ function jugar() //toda la función se repite while vidas>0
 	
 	
 		if i>0 
-			if GetSpriteDistance(3, torresA[1]) < 40 //Se dispara si la distancia es 40
+			if GetSpriteDistance(3, torresA[1]) < 37 //Se dispara si la distancia es 40
 				playerShoota1()			
 			endif
 			if i>1
-				if GetSpriteDistance(3, torresA[2]) < 40 //Se dispara si la distancia es 40
+				if GetSpriteDistance(3, torresA[2]) < 37 //Se dispara si la distancia es 40
 					playerShoota2()			
 				endif			
 				if i>2
-					if GetSpriteDistance(3, torresA[3]) < 40 //Se dispara si la distancia es 40
+					if GetSpriteDistance(3, torresA[3]) < 37 //Se dispara si la distancia es 40
 						playerShoota3()			
 					endif
 					if i>3
-						if GetSpriteDistance(3, torresA[4]) < 40 //Se dispara si la distancia es 40
+						if GetSpriteDistance(3, torresA[4]) < 37 //Se dispara si la distancia es 40
 							playerShoota4()			
 						endif
 					endif
@@ -123,15 +123,15 @@ function jugar() //toda la función se repite while vidas>0
 		endif 
 		
 		if k>0 
-			if GetSpriteDistance(3, torresb[1]) < 40 //Se dispara si la distancia es 40
+			if GetSpriteDistance(3, torresb[1]) < 37 //Se dispara si la distancia es 40
 				playerShootb1()				
 			endif
 			if k>1
-				if GetSpriteDistance(3, torresb[2]) < 40 //Se dispara si la distancia es 40
+				if GetSpriteDistance(3, torresb[2]) < 37 //Se dispara si la distancia es 40
 					playerShootb2()				
 				endif
 				if k>2
-					if GetSpriteDistance(3, torresb[3]) < 40 //Se dispara si la distancia es 40
+					if GetSpriteDistance(3, torresb[3]) < 37 //Se dispara si la distancia es 40
 						playerShootb3()				
 					endif
 				endif

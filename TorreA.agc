@@ -9,7 +9,7 @@ for t=1 to 4
 	SetSpriteActive (torresA[t], 0)
 	SetSpriteSize (torresA [t], 60, 60)
 	SetSpritePosition (torresA[t], mouseX, mouseY)	
-	
+	SetSpriteShape (torresA[t], 1)
 	torres[t].id=t
 	torres[t].torre=torresA [t]
 	

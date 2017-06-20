@@ -14,7 +14,7 @@ global balasExtra as tBullet[3]
 global balasExtra2 as tBullet[2]
 
 function initBullets()
-	playerBullet.speed = 12
+	playerBullet.speed = 6
 	LoadImage(11, "bala.png")
 	CreateSprite(11, 11)
 	SetSpriteSize(11, 60, 60)
