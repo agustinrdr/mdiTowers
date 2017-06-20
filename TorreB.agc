@@ -27,49 +27,62 @@ function fijar2 ()
 			px= Tx
 			py= Ty
 			
-			if Tx>=9 and Tx=<35 and Ty>=549 and Ty<=724
+//camino de la izquierda		
+			if Tx>=35 and Tx=<46 and Ty>=593 and Ty<=724
 				creartorreb ()
-				SetSpriteAngle (torresb [k], -90)				
-				torres[k+4].posicion=1
-			elseif Tx>=9 and Tx<77 and Ty>=519 and Ty<=550
-				creartorreb ()
-				SetSpriteAngle (torresb [k], -45)
-				torres[k+4].posicion=5
-			elseif Tx >=9 and Tx<=440 and Ty>519 and Ty=<547
-				creartorreb ()
-				torres[k+4].posicion=2
-			elseif Tx >=445 and Tx<=482 and Ty>=520 and Ty=<547
-				creartorreb ()
-				SetSpriteAngle (torresb [k], -45)
-				torres[k+4].posicion=5
-			elseif Tx >=453 and Tx<=482 and Ty<=520 and ty >210
-				creartorreb()
 				SetSpriteAngle (torresb [k], -90)
 				torres[k+4].posicion=1
-			elseif Tx>453 and tx <=482 and Ty<=210 and Ty >=140
+			elseif Tx>=35 and Tx=<67 and Ty>=555 and Ty<=592
 				creartorreb ()
 				SetSpriteAngle (torresb [k], -45)
 				torres[k+4].posicion=5
-			elseif Tx>482 and tx <1190 and Ty<=164 and Ty >=140
+			elseif Tx >=60 and Tx<=470 and Ty>=550 and Ty=<560
 				creartorreb ()
-				torres[k+4].posicion=2 
-			elseif Tx>=160 and Tx<=580 and ty >=676 and Ty <= 705
+				torres[k+4].posicion=2
+			elseif Tx >470 and Tx<=488 and Ty>=542 and Ty=<560
 				creartorreb ()
-				SetSpriteAngle (torresb [k], 180)
-				torres[k+4].posicion=3
-			elseif Tx>580 and Tx<=634 and ty >650 and Ty <= 704
+				SetSpriteAngle (torresb [k], -45)
+				torres[k+4].posicion=5
+			elseif Tx >=473 and Tx<=487 and Ty<=541 and ty >=210
+				creartorreb()
+				SetSpriteAngle (torresb [k], -90)				
+				torres[k+4].posicion=1
+			elseif Tx>=473 and tx <=510 and Ty<210 and Ty >=170
 				creartorreb ()
-				SetSpriteAngle (torresb [k], 135)
-				torres[k+4].posicion=4	
-			elseif Tx>=606 and tx<=635 and Ty<676 and Ty >=319
+				SetSpriteAngle (torresb [k], -45)
+				torres[k+4].posicion=5
+			elseif Tx>510 and tx <1190 and Ty<=175 and Ty >=165
+				creartorreb ()
+				torres[k+4].posicion=2
+				
+			//camino de la derecha	
+			elseif tx>=150 and tx <=164 and ty >= 682 and ty <= 724
 				creartorreb ()
 				SetSpriteAngle (torresb [k], 90)
 				torres[k+4].posicion=0
-			elseif Tx>=606 and tx<=635 and Ty<319 and Ty >=293
+			elseif Tx>=150 and Tx<=164 and ty >665 and Ty < 682
+				creartorreb ()
+				SetSpriteAngle (torresb [k], 135)
+				torres[k+4].posicion=4	
+				
+			elseif Tx>=165 and Tx<=579 and ty >=666 and Ty <= 676
+				creartorreb ()
+				torres[k+4].posicion=3
+				SetSpriteAngle (torresb [k], 180)
+			
+			elseif Tx>=580 and tx<=595 and Ty<665 and Ty >=632
 				creartorreb ()
 				SetSpriteAngle (torresb [k], 135)
 				torres[k+4].posicion=4
-			elseif Ty<=318 and ty>=294 and tx >606 and tx<1190
+			elseif Tx>=598 and tx<=610 and Ty<632 and Ty >=301
+				creartorreb ()
+				SetSpriteAngle (torresb [k], 90)
+				torres[k+4].posicion=0
+			elseif Tx>=598 and tx<=615 and Ty>=285 and ty<301
+				creartorreb ()
+				SetSpriteAngle (torresb [k], 135)
+				torres[k+4].posicion=4
+			elseif Ty>=285 and ty<=301 and tx >615 and tx<1190
 				creartorreb ()
 				SetSpriteAngle (torresb [k], 180)
 				torres[k+4].posicion=3
