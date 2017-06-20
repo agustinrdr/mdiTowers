@@ -192,14 +192,10 @@ endfunction
 			
 function indicadores()			
 	// Muestra indicadores varios
-		Print("X: "+str(GetSpriteX(3),1))
-		Print("Y: "+str(GetSpriteY(3),1))
 		Print ("Puntos: "+ str(puntuacion))
 		Print ("Monedas: "+ str(monedas))
 		Print ("Vidas: "+ str(vidas))
-		print ("x: " + str (px))
-		print ("y: " + str (py))
-		print (vidaenemigo)
+		print ("Vida del enemigo: "+str(vidaenemigo))
 endfunction
 
 function ShowGameOverScreen() 
