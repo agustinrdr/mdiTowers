@@ -52,7 +52,7 @@ function fijar2 ()
 				torres[k+4].posicion=5
 			elseif Tx>482 and tx <1190 and Ty<=164 and Ty >=140
 				creartorreb ()
-				torres[k+4].posicion=0 //2?
+				torres[k+4].posicion=2 
 			elseif Tx>=160 and Tx<=580 and ty >=676 and Ty <= 705
 				creartorreb ()
 				SetSpriteAngle (torresb [k], 180)

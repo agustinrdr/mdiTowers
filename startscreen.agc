@@ -75,28 +75,26 @@ function jugar() //toda la función se repite while vidas>0
 			LlegaALaBase()	
 			
 		if GetVirtualButtonPressed (3) // iniciar torre A si toca el boton			
-			stack = stack + 1	
-			
+			stack = stack + 1				
 		elseif GetVirtualButtonPressed (5) // iniciar torre B si toca el boton
-			stack2=stack2+1
-			k=k+1				
+			stack2=stack2+1			
 		endif	  
-		
+	
+	
 		if stack >= 1
 			SetSpriteImage (2,9)
 			SetTextColorAlpha (3, 200)
 			fijar ()
-			//colisiontorrea ()
 		elseif stack2>=1
 			SetSpriteImage (2,9)
 			SetTextColorAlpha (3, 200)
 			fijar2 ()
-			colisiontorreb ()
 		else
 			SetSpriteImage (2,2)
 			SetTextColorAlpha (3, 0)
 		endif
-		
+	
+	
 		if i>0 
 			if GetSpriteDistance(3, torresA[1]) < 40 //Se dispara si la distancia es 40
 				playerShoota1()			
@@ -117,22 +115,26 @@ function jugar() //toda la función se repite while vidas>0
 				endif
 			endif		
 			if enemigoRecibeBala()=1
-				if vidaenemigo = 0
+				if vidaenemigo <= 0
 					killEnemy()
 					crearEnemigo()
 				endif
 			endif
 		endif 
 		
-		if k>0 // Cuando hay al menos una torre tipo A
+		if k>0 
 			if GetSpriteDistance(3, torresb[1]) < 40 //Se dispara si la distancia es 40
 				playerShootb1()				
 			endif
-			if GetSpriteDistance(3, torresb[2]) < 40 //Se dispara si la distancia es 40
-				playerShootb2()				
-			endif
-			if GetSpriteDistance(3, torresb[3]) < 40 //Se dispara si la distancia es 40
-				playerShootb3()				
+			if k>1
+				if GetSpriteDistance(3, torresb[2]) < 40 //Se dispara si la distancia es 40
+					playerShootb2()				
+				endif
+				if k>2
+					if GetSpriteDistance(3, torresb[3]) < 40 //Se dispara si la distancia es 40
+						playerShootb3()				
+					endif
+				endif
 			endif
 			if enemigoRecibeBala2()=1
 				if vidaenemigo <= 0
@@ -195,5 +197,4 @@ type torreActiva
 	id as integer
 	active as integer //0 inactiva, 1 activa
 endtype
-//array torres[id] va del 1 al 7 / del 1-4 son las torresA / del 5-7 las torresB
-
+//array torres[n] va del 1 al 7 / del 1-4 son las torresA / del 5-7 las torresB

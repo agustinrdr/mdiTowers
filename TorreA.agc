@@ -51,7 +51,7 @@ function fijar ()
 				torres[i].posicion=5
 			elseif Tx>482 and tx <1190 and Ty<=164 and Ty >=140
 				creartorrea ()
-				torres[i].posicion=0
+				torres[i].posicion=2
 			elseif Tx>=160 and Tx<=580 and ty >=676 and Ty <= 705
 				creartorreA ()
 				torres[i].posicion=3

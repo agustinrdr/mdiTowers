@@ -4,8 +4,8 @@ global displayHeight as integer
 #constant FALSE 0
 
 function Initialise()	
-	displayWidth = 1370
-	displayHeight = 768
+	displayWidth = 1380
+	displayHeight = 778
 	
 	// Mostrar errores
 	SetErrorMode(2)
