@@ -10,6 +10,8 @@ endtype
 
 global playerBullet as tBullet
 global playerBullet2 as tBullet
+global balasExtra as tBullet[3]
+global balasExtra2 as tBullet[2]
 
 function initBullets()
 	playerBullet.speed = 12
@@ -32,11 +34,11 @@ function initBullets2 ()
 endfunction
 
 //Se debería llamar en startscreen, si detecta a un enemigo dentro del rango
-function playerShoota1()
-	torres[1].bala=playerBullet
-	playerBullet.posicion=torres[1].posicion
+function playerShoota1()	
 	if playerBullet.active = 1 then exitfunction //dispara de a una bala a la vez
 	playerBullet.active = 1
+	torres[1].bala=playerBullet
+	playerBullet.posicion=torres[1].posicion
 	//ubicación de la bala
 	playerBullet.x = GetSpriteX(torresA[1])+GetSpriteWidth(torresA[1])-60
 	playerBullet.y = GetSpriteY(torresA[1])-(GetSpriteHeight(torresA[1]))+60
@@ -45,10 +47,10 @@ function playerShoota1()
 endfunction
 
 function playerShoota2()
-	torres[2].bala=playerBullet
-	playerBullet.posicion=torres[2].posicion
 	if playerBullet.active = 1 then exitfunction //dispara de a una bala a la vez
 	playerBullet.active = 1
+	torres[2].bala=playerBullet
+	playerBullet.posicion=torres[2].posicion
 	//ubicación de la bala
 	playerBullet.x = GetSpriteX(torresA[2])+GetSpriteWidth(torresA[2])-60
 	playerBullet.y = GetSpriteY(torresA[2])-(GetSpriteHeight(torresA[2]))+60
@@ -57,10 +59,10 @@ function playerShoota2()
 endfunction
 
 function playerShoota3()
-	torres[3].bala=playerBullet
-	playerBullet.posicion=torres[3].posicion
 	if playerBullet.active = 1 then exitfunction //dispara de a una bala a la vez
 	playerBullet.active = 1
+	torres[3].bala=playerBullet
+	playerBullet.posicion=torres[3].posicion
 	//ubicación de la bala
 	playerBullet.x = GetSpriteX(torresA[3])+GetSpriteWidth(torresA[3])-60
 	playerBullet.y = GetSpriteY(torresA[3])-(GetSpriteHeight(torresA[3]))+60
@@ -69,10 +71,10 @@ function playerShoota3()
 endfunction
 
 function playerShoota4()
-	torres[4].bala=playerBullet
-	playerBullet.posicion=torres[4].posicion
 	if playerBullet.active = 1 then exitfunction //dispara de a una bala a la vez
 	playerBullet.active = 1
+	torres[4].bala=playerBullet
+	playerBullet.posicion=torres[4].posicion
 	//ubicación de la bala
 	playerBullet.x = GetSpriteX(torresA[4])+GetSpriteWidth(torresA[4])-60
 	playerBullet.y = GetSpriteY(torresA[4])-(GetSpriteHeight(torresA[4]))+60
@@ -93,10 +95,10 @@ function playerShootb1()
 endfunction
 
 function playerShootb2()
-	torres[6].bala=playerBullet2
-	playerBullet2.posicion=torres[6].posicion
 	if playerBullet2.active = 1 then exitfunction //dispara de a una bala a la vez
 	playerBullet2.active = 1
+	torres[6].bala=playerBullet2
+	playerBullet2.posicion=torres[6].posicion
 	//ubicación de la bala
 	playerBullet2.x = GetSpriteX(torresb[2])+GetSpriteWidth(torresb[2])-60
 	playerBullet2.y = GetSpriteY(torresb[2])-(GetSpriteHeight(torresb[2]))+60
@@ -105,10 +107,10 @@ function playerShootb2()
 endfunction
 
 function playerShootb3()
-	torres[7].bala=playerBullet2
-	playerBullet2.posicion=torres[7].posicion
 	if playerBullet2.active = 1 then exitfunction //dispara de a una bala a la vez
 	playerBullet2.active = 1
+	torres[7].bala=playerBullet2
+	playerBullet2.posicion=torres[7].posicion
 	//ubicación de la bala
 	playerBullet2.x = GetSpriteX(torresb[3])+GetSpriteWidth(torresb[3])-60
 	playerBullet2.y = GetSpriteY(torresb[3])-(GetSpriteHeight(torresb[3]))+60

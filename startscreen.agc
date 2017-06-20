@@ -3,7 +3,10 @@
 #include "TorreA.agc"
 #include "TorreB.agc"
 #include "balas.agc"
+
 global torres as torreActiva[8]
+global px as float
+global py as float
 
 function initStartScreen()
 	// Creación de botones virtuales
@@ -71,21 +74,19 @@ function jugar() //toda la función se repite while vidas>0
 			movEnemigos()
 			LlegaALaBase()	
 			
-		if GetVirtualButtonPressed (3) // iniciar torre A si toca el boton
-			
+		if GetVirtualButtonPressed (3) // iniciar torre A si toca el boton			
 			stack = stack + 1	
-			i=i+1
+			
 		elseif GetVirtualButtonPressed (5) // iniciar torre B si toca el boton
 			stack2=stack2+1
-			k=k+1	
-			
+			k=k+1				
 		endif	  
 		
 		if stack >= 1
 			SetSpriteImage (2,9)
 			SetTextColorAlpha (3, 200)
 			fijar ()
-			colisiontorrea ()
+			//colisiontorrea ()
 		elseif stack2>=1
 			SetSpriteImage (2,9)
 			SetTextColorAlpha (3, 200)
@@ -96,26 +97,32 @@ function jugar() //toda la función se repite while vidas>0
 			SetTextColorAlpha (3, 0)
 		endif
 		
-		if i>0 // Cuando hay al menos una torre tipo A
+		if i>0 
 			if GetSpriteDistance(3, torresA[1]) < 40 //Se dispara si la distancia es 40
 				playerShoota1()			
 			endif
-			if GetSpriteDistance(3, torresA[2]) < 40 //Se dispara si la distancia es 40
-				playerShoota2()			
-			endif
-			if GetSpriteDistance(3, torresA[3]) < 40 //Se dispara si la distancia es 40
-				playerShoota3()			
-			endif
-			if GetSpriteDistance(3, torresA[4]) < 40 //Se dispara si la distancia es 40
-				playerShoota4()			
-			endif
+			if i>1
+				if GetSpriteDistance(3, torresA[2]) < 40 //Se dispara si la distancia es 40
+					playerShoota2()			
+				endif			
+				if i>2
+					if GetSpriteDistance(3, torresA[3]) < 40 //Se dispara si la distancia es 40
+						playerShoota3()			
+					endif
+					if i>3
+						if GetSpriteDistance(3, torresA[4]) < 40 //Se dispara si la distancia es 40
+							playerShoota4()			
+						endif
+					endif
+				endif
+			endif		
 			if enemigoRecibeBala()=1
 				if vidaenemigo = 0
 					killEnemy()
 					crearEnemigo()
 				endif
 			endif
-		endif
+		endif 
 		
 		if k>0 // Cuando hay al menos una torre tipo A
 			if GetSpriteDistance(3, torresb[1]) < 40 //Se dispara si la distancia es 40
