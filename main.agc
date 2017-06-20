@@ -6,7 +6,7 @@
 #include "startscreen.agc"
 
 global puntuacion = 0 
-global monedas = 500
+global monedas = 10
 global vidas = 3
 global mouseX as float
 global mouseY as float

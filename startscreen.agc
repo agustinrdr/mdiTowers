@@ -48,7 +48,7 @@ function iniciar()
 		torrea()
 		torreb()
 		ResetTimer() // resetea el timer
-		while (vidas>0 AND contadorenemigo < 20)	
+		while (vidas>0 AND contadorenemigo < 15)	
 			jugar()
 		endwhile
 
@@ -57,7 +57,7 @@ function iniciar()
 			ShowGameOverScreen()
 		endif
 		
-		if (contadorenemigo = 20)
+		if (contadorenemigo = 15)
 			SetSpriteVisible(3,0)
 			ShowWinScreen()
 		endif

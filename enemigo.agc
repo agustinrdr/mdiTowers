@@ -10,7 +10,7 @@
 	
 function crearEnemigo()
 	contadorenemigo = contadorenemigo+1
-	vidaenemigo = 20*contadorenemigo
+	vidaenemigo = 30*contadorenemigo
 	CreateSprite(3,3)
 	SetSpriteAngle(3,-90)
 	SetSpritePosition(3, 66, 690)
@@ -94,6 +94,7 @@ endfunction
 function killEnemy()
 	DeleteSprite(3)
 	puntuacion=puntuacion+100
+	monedas = monedas + 5
 	variable=0
 	KillPlayerBullet()
 	KillPlayerBulletA()
