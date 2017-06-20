@@ -126,6 +126,24 @@ function jugar() //toda la función se repite while vidas>0
 					crearEnemigo()
 				endif
 			endif
+			if enemigoRecibeBalaA()=1
+				if vidaenemigo <= 0
+					killEnemy()
+					crearEnemigo()
+				endif
+			endif
+			if enemigoRecibeBalaA2()=1
+				if vidaenemigo <= 0
+					killEnemy()
+					crearEnemigo()
+				endif
+			endif
+			if enemigoRecibeBalaA3()=1
+				if vidaenemigo <= 0
+					killEnemy()
+					crearEnemigo()
+				endif
+			endif
 		endif 
 		
 		if k>0 
@@ -148,9 +166,26 @@ function jugar() //toda la función se repite while vidas>0
 					crearEnemigo()
 				endif
 			endif
+			if enemigoRecibeBalaB()=1
+				if vidaenemigo <= 0
+					killEnemy()
+					crearEnemigo()
+				endif
+			endif
+			if enemigoRecibeBalaB1()=1
+				if vidaenemigo <= 0
+					killEnemy()
+					crearEnemigo()
+				endif
+			endif
 		endif		
 		UpdatePlayerBullet()
+		UpdatePlayerBulletA()
+		UpdatePlayerBulletA2()
+		UpdatePlayerBulletA3()
 		UpdatePlayerBullet2()
+		UpdatePlayerBulletB()
+		UpdatePlayerBulletB1()
 		sync()
 
 endfunction

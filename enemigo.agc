@@ -95,4 +95,11 @@ function killEnemy()
 	DeleteSprite(3)
 	puntuacion=puntuacion+100
 	variable=0
+	KillPlayerBullet()
+	KillPlayerBulletA()
+	KillPlayerBulletA2()
+	KillPlayerBulletA3()
+	KillPlayerBullet2()
+	KillPlayerBulletB()
+	KillPlayerBulletB1()
 endfunction
