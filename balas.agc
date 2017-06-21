@@ -39,7 +39,7 @@ function initBullets2 ()
 	playerBullet2.speed = 4
 	playerBulletB.speed = 4
 	playerBulletB1.speed = 4
-	LoadImage(12, "bala4.png")
+	LoadImage(12, "bala3.png")
 	CreateSprite(12, 12)
 	SetSpriteSize(12, 60, 60)
 	SetSpriteShape(12,3)

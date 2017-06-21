@@ -72,6 +72,9 @@ function LlegaALaBase ()
 
 	if (positionX#  = baseX# and positionY#  = baseY#)
 		vidas = vidas-1
+		if vidas = 0
+			SetSpriteVisible(3,0) //si no hay vidas esconde al enemigo
+		endif
 		variable=0
 		SetSpriteAngle(3,-90)
 		SetSpritePosition(3, 66 , 690)

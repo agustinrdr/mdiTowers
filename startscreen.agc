@@ -53,12 +53,11 @@ function iniciar()
 			jugar()
 		endwhile
 
-		if (vidas = 0)
-			SetSpriteVisible(3,0) //esconde al enemigo			
+		if (vidas = 0)						
 			ShowGameOverScreen()
 		endif
 		
-		if (contadorenemigo = 15)
+		if (contadorenemigo = 16)
 			SetSpriteVisible(3,0)
 			ShowWinScreen()
 		endif
@@ -197,8 +196,9 @@ function indicadores()
 	// Muestra indicadores varios
 		Print ("Puntos: "+ str(puntuacion))
 		Print ("Monedas: "+ str(monedas))
-		Print ("Vidas: "+ str(vidas))
-		print ("Vida del enemigo: "+str(vidaenemigo))
+		//Print ("Vidas: "+ str(vidas))
+		print ("Resistencia enemigo: "+str(vidaenemigo))
+		print ("Objetivo: "+str(contadorenemigo-1)+"/15 exterminados")
 endfunction
 
 function ShowGameOverScreen() 

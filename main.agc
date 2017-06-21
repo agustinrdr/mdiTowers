@@ -7,7 +7,7 @@
 
 global puntuacion = 0 
 global monedas = 10
-global vidas = 3
+global vidas = 1
 global mouseX as float
 global mouseY as float
 global torresA as integer [5]
