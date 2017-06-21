@@ -51,3 +51,15 @@ if k>2
 endif	
 	
 endfunction
+function sacarbotones ()
+	SetVirtualButtonVisible (3,0)
+	SetVirtualButtonVisible (4,0)
+	SetVirtualButtonVisible (5,0)
+	setVirtualButtonVisible (6,0)
+endfunction
+function ponerbotones ()
+	SetVirtualButtonVisible (3,1)
+	SetVirtualButtonVisible (4,1)
+	SetVirtualButtonVisible (5,1)
+	SetVirtualButtonVisible (6,1)
+endfunction

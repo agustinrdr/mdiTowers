@@ -38,7 +38,8 @@ function iniciar()
 		LoadImage (8, "towerDefense_tile250.png") //torre b
 		LoadImage(3, "towerDefense_tile248.png") //enemigo
 		Loadimage (9, "fondotorre.jpg")
-		LoadImage (10, "towerDefense_tile180.png") //base fija de las torres - no usada
+		LoadImage (10, "towerDefense_tile180.png")
+	//base fija de las torres - no usada
 		
 		CreateSprite(2,2)
 		crearEnemigo()
@@ -82,9 +83,11 @@ function jugar() //toda la función se repite while vidas>0
 			LlegaALaBase()	
 			
 		if GetVirtualButtonPressed (3) // iniciar torre A si toca el boton			
-			stack = stack + 1				
+			stack = stack + 1
+			sacarbotones ()
 		elseif GetVirtualButtonPressed (5) // iniciar torre B si toca el boton
 			stack2=stack2+1			
+			sacarbotones ()
 		endif	  
 	
 	
@@ -205,7 +208,6 @@ function ShowGameOverScreen()
 		SetVirtualButtonVisible(5,0) //desaparecer el botón de la torreB
 		SetVirtualButtonVisible(6,0) //desaparecer el botón de la torreB
 		SetTextColorAlpha (3, 0)
-		
 		LoadImage(6,"GAMEOVER.png")
 		CreateSprite(6,6)
 		CreateText(2,"Presiona ESC para salir")
@@ -219,12 +221,10 @@ function ShowWinScreen()
 		SetVirtualButtonVisible(5,0) //desaparecer el botón de la torreB
 		SetVirtualButtonVisible(6,0) //desaparecer el botón de la torreB
 		SetTextColorAlpha (3, 0)
-		
-		CreateText(20,"Felicitaciones, ha ganado!")
+		LoadImage (110, "ganador.jpg")
+		CreateSprite(500,110) 
 		CreateText(21,"Presione ESC para salir")
-		SetTextSize(20,40)
 		SetTextSize(21,40)
-		SetTextPosition(20,520,510)
 		SetTextPosition(21,520,560)
 endfunction
 

@@ -25,69 +25,84 @@ function fijar ()
 			ty=ty-30
 			px= Tx
 			py= Ty
-					
+				
 			//camino de la izquierda		
 			if Tx>=35 and Tx=<46 and Ty>=593 and Ty<=724
 				creartorrea ()
 				SetSpriteAngle (torresA[i], -90)
 				torres[i].posicion=1
+				ponerbotones ()
 			elseif Tx>=35 and Tx=<67 and Ty>=555 and Ty<=592
 				creartorrea ()
 				SetSpriteAngle (torresA[i], -45)
 				torres[i].posicion=5
+				ponerbotones ()
 			elseif Tx >=60 and Tx<=470 and Ty>=550 and Ty=<560
 				creartorrea ()
 				torres[i].posicion=2
+				ponerbotones ()
 			elseif Tx >470 and Tx<=488 and Ty>=542 and Ty=<560
 				creartorrea ()
 				SetSpriteAngle (torresA[i], -45)
 				torres[i].posicion=5
+				ponerbotones ()
 			elseif Tx >=473 and Tx<=487 and Ty<=541 and ty >=210
 				creartorrea()
 				SetSpriteAngle (torresA[i], -90)				
 				torres[i].posicion=1
+				ponerbotones ()
 			elseif Tx>=473 and tx <=510 and Ty<210 and Ty >=170
 				creartorrea ()
 				SetSpriteAngle (torresA[i], -45)
 				torres[i].posicion=5
+				ponerbotones ()
 			elseif Tx>510 and tx <1190 and Ty<=175 and Ty >=165
 				creartorrea ()
 				torres[i].posicion=2
+				ponerbotones ()
 				
 			//camino de la derecha	
 			elseif tx>=150 and tx <=164 and ty >= 682 and ty <= 724
 				creartorreA ()
 				SetSpriteAngle (torresA[i], 90)
 				torres[i].posicion=0
+				ponerbotones ()
 			elseif Tx>=150 and Tx<=164 and ty >665 and Ty < 682
 				creartorreA ()
 				SetSpriteAngle (torresA[i], 135)
 				torres[i].posicion=4	
+				ponerbotones ()
 				
 			elseif Tx>=165 and Tx<=579 and ty >=666 and Ty <= 676
 				creartorreA ()
 				torres[i].posicion=3
 				SetSpriteAngle (torresA[i], 180)
-			
+				ponerbotones ()
 			elseif Tx>=580 and tx<=595 and Ty<665 and Ty >=632
 				creartorreA ()
 				SetSpriteAngle (torresA[i], 135)
 				torres[i].posicion=4
+				ponerbotones ()
 			elseif Tx>=598 and tx<=610 and Ty<632 and Ty >=301
 				creartorreA ()
 				SetSpriteAngle (torresA[i], 90)
 				torres[i].posicion=0
+				ponerbotones ()
 			elseif Tx>=598 and tx<=615 and Ty>=285 and ty<301
 				creartorreA ()
 				SetSpriteAngle (torresA[i], 135)
 				torres[i].posicion=4
+				ponerbotones ()
 			elseif Ty>=285 and ty<=301 and tx >615 and tx<1190
 				creartorreA ()
 				SetSpriteAngle (torresA[i], 180)
 				torres[i].posicion=3
+				ponerbotones ()
 			endif
 			colisiontorrea ()
 			stack=stack-1 
+			SetVirtualButtonActive (3,1)
+			ponerbotones ()
 		endif		
 	endif
 endfunction
